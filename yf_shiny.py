@@ -98,7 +98,7 @@ def server(input, output, session):
             # We rename it to the ticker name for the loop below
             df.columns = [selected_tickers[0]]
 
-        fig, ax = plt.subplots(figsize=(12, 7))
+        fig, ax = plt.subplots(figsize=(10, 10))
 
         for ticker in selected_tickers:
             if ticker not in df.columns:
@@ -149,6 +149,7 @@ def server(input, output, session):
             )
             
         # ax.set_title('Value/Date', fontsize=14)
+        ax.tick_params(axis='both', labelsize=10)
         ax.set_xlabel('Date', fontsize=10)
         ax.set_ylabel('Value', fontsize=10)
         ax.legend(loc='upper left') #, bbox_to_anchor=(1, 1))
