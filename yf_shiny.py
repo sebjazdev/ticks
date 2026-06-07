@@ -13,7 +13,7 @@ AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X',
 
 # UI Definition
 app_ui = ui.page_fluid(
-    ui.panel_title("Yahoo Finance Ticker Viewer (using Shiny For Python)"),
+    ui.panel_title("Yahoo Finance Ticker Viewer"),
     ui.layout_sidebar(
         ui.sidebar(
             ui.input_date("start_date", "Select Start Date", value="2026-01-01"),
@@ -119,7 +119,7 @@ def server(input, output, session):
             today_date = prices.index[-1]
 
             # Plot the line
-            line, = ax.plot(prices.index, prices, label=ticker, linewidth=1.5)
+            line, = ax.plot(prices.index, prices, label=ticker, linewidth=1.0)
             color = line.get_color()
 
             # Highlight MAX
@@ -129,9 +129,10 @@ def server(input, output, session):
                 (max_date, max_val), 
                 xytext=(5, 5), 
                 textcoords="offset points", 
+                ha='left',
                 fontweight='bold', 
                 color='red',
-                fontsize=9
+                fontsize=8
             )
             
             # Highlight TODAY
@@ -140,10 +141,11 @@ def server(input, output, session):
                 f"Today {ticker} : {today_date:%Y-%m-%d}, {today_val:.2f}", 
                 (today_date, today_val), 
                 xytext=(5, -15), 
-                textcoords="offset points", 
+                textcoords="offset points",
+                ha='left',
                 fontweight='bold', 
                 color='blue',
-                fontsize=9
+                fontsize=8
             )
             
         ax.set_title('Value/Date', fontsize=14)
