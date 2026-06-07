@@ -16,11 +16,11 @@ app_ui = ui.page_fluid(
     ui.panel_title("Yahoo Finance Ticker Viewer"),
     ui.layout_sidebar(
         ui.sidebar(
-            ui.input_date("start_date", "Select Start Date", value="2026-01-01"),
+            ui.input_date("start_date", ui.tags.b("Select Start Date"), value="2026-01-01"),
             # ui.input_checkbox("select_all", "Select/Unselect All", value=False),
             ui.input_checkbox_group(
                 "tickers", 
-                "Select Tickers", 
+                ui.tags.b("Select Tickers"), 
                 choices={t: t for t in AVAILABLE_TICKERS}
                 # selected=AVAILABLE_TICKERS
             )
