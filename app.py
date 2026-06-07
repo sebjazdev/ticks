@@ -146,11 +146,11 @@ def server(input, output, session):
                 fontsize=8
             )
             
-        ax.set_title('Value/Date', fontsize=14)
+        # ax.set_title('Value/Date', fontsize=14)
         ax.tick_params(axis='both', labelsize=8)
         ax.set_xlabel('Date', fontsize=10, fontweight='bold')
         ax.set_ylabel('Value', fontsize=10, fontweight='bold')
-        ax.legend(loc='upper left') #, bbox_to_anchor=(1, 1))
+        ax.legend(loc='upper left') 
         ax.grid(True, linestyle='--', alpha=0.7)
         plt.tight_layout()
         
