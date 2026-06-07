@@ -21,8 +21,8 @@ app_ui = ui.page_fluid(
             ui.input_checkbox_group(
                 "tickers", 
                 "Select Tickers", 
-                choices={t: t for t in AVAILABLE_TICKERS},
-                selected=AVAILABLE_TICKERS
+                choices={t: t for t in AVAILABLE_TICKERS}
+                # selected=AVAILABLE_TICKERS
             )
         ),
         ui.output_plot("stock_plot"),
