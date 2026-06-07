@@ -125,7 +125,7 @@ def server(input, output, session):
             ax.annotate(
                 f"Max {ticker} : {max_date:%Y-%m-%d}, {max_val:.2f}", 
                 (max_date, max_val), 
-                xytext=(5, 5), 
+                xytext=(5, 10), 
                 textcoords="offset points", 
                 ha='right',
                 fontweight='bold', 
