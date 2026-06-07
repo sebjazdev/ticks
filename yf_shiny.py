@@ -108,13 +108,11 @@ def server(input, output, session):
             if prices.empty:
                 continue
             
-            # 3. Plot list_tickers and highlight maximum value and today's value
-            
             # MAX Calculation
             max_val = prices.max()
             max_date = prices.idxmax()
             
-            # TODAY (Most recent available)
+            # TODAY Most recent available
             today_val = prices.iloc[-1]
             today_date = prices.index[-1]
 
