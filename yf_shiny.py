@@ -17,7 +17,7 @@ app_ui = ui.page_fluid(
     ui.layout_sidebar(
         ui.sidebar(
             ui.input_date("start_date", "Select Start Date", value="2026-01-01"),
-            # ui.input_checkbox("select_all", "Select/Unselect All", value=False),
+            ui.input_checkbox("select_all", "Select/Unselect All", value=False),
             ui.input_checkbox_group(
                 "tickers", 
                 "Select Tickers", 
