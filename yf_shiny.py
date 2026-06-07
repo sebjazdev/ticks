@@ -129,7 +129,7 @@ def server(input, output, session):
                 (max_date, max_val), 
                 xytext=(5, 5), 
                 textcoords="offset points", 
-                ha='left',
+                ha='right',
                 fontweight='bold', 
                 color='red',
                 fontsize=8
@@ -142,7 +142,7 @@ def server(input, output, session):
                 (today_date, today_val), 
                 xytext=(5, -15), 
                 textcoords="offset points",
-                ha='left',
+                ha='right',
                 fontweight='bold', 
                 color='blue',
                 fontsize=8
