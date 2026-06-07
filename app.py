@@ -22,7 +22,7 @@ app_ui = ui.page_fluid(
                 "tickers", 
                 "Select Tickers", 
                 choices={t: t for t in AVAILABLE_TICKERS}
-                # selected=AVAILABLE_TICKERS
+                selected=AVAILABLE_TICKERS
             ),
 ##            ui.markdown("""
 ##                **Instructions:**
