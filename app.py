@@ -9,7 +9,7 @@ from datetime import date
 AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
                      'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
                      'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
-                     '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', 'VFIAX', # S&P 500
+                     '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
                      '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
                      '^DJI', # DOW JONES
                      'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
@@ -33,7 +33,7 @@ app_ui = ui.page_fluid(
                     - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
-                    - **S&P500** : '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', 'VFIAX'
+                    - **S&P500** : '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO' (GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] IVV & VOO [low expense ratio] are exchange traded funds / ETFs)
                     - **NASDAQ** : '^IXIC', '^NDX', 'QQQ', 'QQQM' (IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)
                     - **DOWJONES** : '^DJI'
                     - **VANGUARD** : 'VT', 'VTI', 'VGT', 'VYM' (VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)
