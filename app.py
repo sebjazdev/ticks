@@ -30,18 +30,18 @@ app_ui = ui.page_fluid(
         ),
         ui.output_plot("stock_plot"),
         ui.markdown("""
-                    - FIAT : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
-                    - CRYPTO : 'BTC-USD', 'ETH-USD', 'XRP-USD'
-                    - AI : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
-                    - S&P500 : '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', 'VFIAX'
-                    - NASDAQ : '^IXIC', '^NDX', 'QQQ', 'QQQM' (IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)
-                    - DOWJONES : '^DJI'
-                    - VANGUARD : 'VT', 'VTI', 'VGT', 'VYM' (VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)
-                    - BLACKROCK : 'BLK'
-                    - DOLLARAMA : 'DOL.TO', 'DLMAF'
-                    - COUCHETARD : 'ATD.TO'
-                    - RETAIL : 'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' (TGT competing Walmart, BJ competing Costco, KR competing WMT and COST, DG DollarGeneral, HD HomeDepot)
-                    - TECH : 'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'
+                    - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
+                    - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
+                    - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
+                    - **S&P500** : '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', 'VFIAX'
+                    - **NASDAQ** : '^IXIC', '^NDX', 'QQQ', 'QQQM' (IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)
+                    - **DOWJONES** : '^DJI'
+                    - **VANGUARD** : 'VT', 'VTI', 'VGT', 'VYM' (VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)
+                    - **BLACKROCK** : 'BLK'
+                    - **DOLLARAMA** : 'DOL.TO', 'DLMAF'
+                    - **COUCHETARD** : 'ATD.TO'
+                    - **RETAIL** : 'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' (TGT competing Walmart, BJ competing Costco, KR competing WMT and COST, DG DollarGeneral, HD HomeDepot)
+                    - **TECH** : 'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'
                      """)
     )
 )
