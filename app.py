@@ -6,10 +6,18 @@ import pandas as pd
 from datetime import date
 
 # Define the list of available tickers
-AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X',
-                     'VGT', 'VT', 'VYM', 'VTI', 'VOO', 'VFIAX', 'BLK',
-                     'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', 'DOL.TO', 'ATD.TO',
-                     'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT']
+AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
+                     'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
+                     'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
+                     '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', 'VFIAX', # S&P 500
+                     '^IXIC', '^NDX', 'QQQ', 'QQQM',  # NASDAQ
+                     '^DJI', # DOW JONES
+                     'VT', 'VTI', 'VGT', 'VYM', 'BLK', # VANGUARD
+                     'BLK', # BLACKROCK
+                     'DOL.TO', 'DLMAF', # DOLLARAMA
+                     'ATD.TO', # COUCHETARD
+                     'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', # RETAIL
+                     'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'] # TECH
 
 # UI Definition
 app_ui = ui.page_fluid(
