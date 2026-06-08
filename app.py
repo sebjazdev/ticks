@@ -13,7 +13,7 @@ AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X',
 
 # UI Definition
 app_ui = ui.page_fluid(
-    ui.panel_title("Yahoo Finance Ticker Viewer"),
+    ui.panel_title("Yahoo Finance Ticker Viewer", style="font-size: 12px; font-weight: bold;"),
     ui.layout_sidebar(
         ui.sidebar(
             ui.input_date("start_date", ui.tags.b("Select Start Date"), value="2026-01-01"),
