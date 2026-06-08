@@ -29,6 +29,18 @@ app_ui = ui.page_fluid(
             ui.input_checkbox_group("tickers", ui.tags.b("Select Tickers"), choices={t: t for t in AVAILABLE_TICKERS}) # selected=AVAILABLE_TICKERS
         ),
         ui.output_plot("stock_plot"),
+        ui.markdown("""'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
+                     'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
+                     'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
+                     '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', 'VFIAX', # S&P 500
+                     '^IXIC', '^NDX', 'QQQ', 'QQQM',  # NASDAQ
+                     '^DJI', # DOW JONES
+                     'VT', 'VTI', 'VGT', 'VYM', 'BLK', # VANGUARD
+                     'BLK', # BLACKROCK
+                     'DOL.TO', 'DLMAF', # DOLLARAMA
+                     'ATD.TO', # COUCHETARD
+                     'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', # RETAIL
+                     'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'] # TECH""")
     )
 )
 
