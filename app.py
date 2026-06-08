@@ -21,7 +21,7 @@ AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X',
 
 # UI Definition
 app_ui = ui.page_fluid(
-    ui.panel_title(window_title="Yahoo Finance Tickers"), # title="Yahoo Finance Tickers", 
+    ui.panel_title(title="", window_title="Yahoo Finance Tickers"),
     ui.layout_sidebar(
         ui.sidebar(
             ui.input_date("start_date", ui.tags.b("Select Start Date"), value="2026-01-01"),
