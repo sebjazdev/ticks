@@ -30,18 +30,19 @@ app_ui = ui.page_fluid(
         ),
         ui.output_plot("stock_plot"),
         ui.markdown("""
-                    - FIAT : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
-                    - CRYPTO : 'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
-                    - AI : 'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
-                    - S&P500 : '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', 'VFIAX', # S&P500
-                     '^IXIC', '^NDX', 'QQQ', 'QQQM',  # NASDAQ
-                     '^DJI', # DOW JONES
-                     'VT', 'VTI', 'VGT', 'VYM', 'BLK', # VANGUARD
-                     'BLK', # BLACKROCK
-                     'DOL.TO', 'DLMAF', # DOLLARAMA
-                     'ATD.TO', # COUCHETARD
-                     'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', # RETAIL
-                     'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'] # TECH""")
+                    - FIAT        'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
+                    - CRYPTO      'BTC-USD', 'ETH-USD', 'XRP-USD'
+                    - AI          'PLTR', 'OPAI.PVT', 'ANTH.PVT'
+                    - S&P500      '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', 'VFIAX'
+                    - NASDAQ      '^IXIC', '^NDX', 'QQQ', 'QQQM'
+                    - DOWJONES    '^DJI'
+                    - VANGUARD    'VT', 'VTI', 'VGT', 'VYM', 'BLK'
+                    - BLACKROCK   'BLK'
+                    - DOLLARAMA   'DOL.TO', 'DLMAF'
+                    - COUCHETARD  'ATD.TO'
+                    - RETAIL      'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG'
+                    - TECH        'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'
+                     """)
     )
 )
 
