@@ -139,11 +139,11 @@ def server(input, output, session):
             )
             
         ax.set_title('Yahoo Finance Tickers', fontsize=10, fontweight='bold')
-        ax.tick_params(axis='both', labelsize=8)
         ax.set_xlabel('Date', fontsize=10, fontweight='bold')
         ax.set_ylabel('Value', fontsize=10, fontweight='bold')
-        ax.legend(loc='upper left') 
+        ax.tick_params(axis='both', labelsize=8)
         ax.grid(True, linestyle='--', alpha=0.7)
+        ax.legend(loc='upper left')
         plt.tight_layout()
         
         return fig
