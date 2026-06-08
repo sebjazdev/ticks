@@ -10,13 +10,13 @@ AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X',
                      'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
                      'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
                      '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', 'VFIAX', # S&P 500
-                     '^IXIC', '^NDX', 'QQQ', 'QQQM',  # NASDAQ
+                     '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
                      '^DJI', # DOW JONES
-                     'VT', 'VTI', 'VGT', 'VYM', 'BLK', # VANGUARD
+                     'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
                      'BLK', # BLACKROCK
                      'DOL.TO', 'DLMAF', # DOLLARAMA
                      'ATD.TO', # COUCHETARD
-                     'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', # RETAIL
+                     'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD', # RETAIL
                      'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'] # TECH
 
 # UI Definition
@@ -34,13 +34,13 @@ app_ui = ui.page_fluid(
                     - CRYPTO : 'BTC-USD', 'ETH-USD', 'XRP-USD'
                     - AI : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                     - S&P500 : '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', 'VFIAX'
-                    - NASDAQ : '^IXIC', '^NDX', 'QQQ', 'QQQM'
+                    - NASDAQ : '^IXIC', '^NDX', 'QQQ', 'QQQM' (IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)
                     - DOWJONES : '^DJI'
-                    - VANGUARD : 'VT', 'VTI', 'VGT', 'VYM', 'BLK'
+                    - VANGUARD : 'VT', 'VTI', 'VGT', 'VYM' (VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)
                     - BLACKROCK : 'BLK'
                     - DOLLARAMA : 'DOL.TO', 'DLMAF'
                     - COUCHETARD : 'ATD.TO'
-                    - RETAIL : 'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG'
+                    - RETAIL : 'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' (TGT competing Walmart, BJ competing Costco, KR competing WMT and COST, DG DollarGeneral, HD HomeDepot)
                     - TECH : 'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'
                      """)
     )
