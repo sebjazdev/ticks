@@ -33,14 +33,14 @@ app_ui = ui.page_fluid(
                     - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
-                    - **S&P500** : '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO' <span style='color: red;'>(GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
-                    - **NASDAQ** : '^IXIC', '^NDX', 'QQQ', 'QQQM' <span style='color: red;'>(IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
+                    - **S&P500** : '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO' <span style='color: blue;'>(GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
+                    - **NASDAQ** : '^IXIC', '^NDX', 'QQQ', 'QQQM' <span style='color: blue;'>(IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
                     - **DOWJONES** : '^DJI'
-                    - **VANGUARD** : 'VT', 'VTI', 'VGT', 'VYM' <span style='color: red;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
+                    - **VANGUARD** : 'VT', 'VTI', 'VGT', 'VYM' <span style='color: blue;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
                     - **BLACKROCK** : 'BLK'
                     - **DOLLARAMA** : 'DOL.TO', 'DLMAF'
                     - **COUCHETARD** : 'ATD.TO'
-                    - **RETAIL** : 'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' <span style='color: red;'>(TGT competing Walmart, BJ competing Costco, KR competing WMT and COST, DG DollarGeneral, HD HomeDepot)</span>
+                    - **RETAIL** : 'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' <span style='color: blue;'>(TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
                     - **TECH** : 'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'
                      """)
     )
