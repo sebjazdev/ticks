@@ -40,8 +40,8 @@ app_ui = ui.page_fluid(
                     - **DOWJONES** : '^DJI' <span style='color: blue;'>(30 usa major financial performance publicly traded companies)</span>
                     - **VANGUARD** : <span style='color: green;'>**'VT'**</span>, 'VTI', 'VGT', 'VYM' <span style='color: blue;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
                     - **BLACKROCK** : 'BLK'
-                    - **DOLLARAMA** : 'DOL.TO', 'DLMAF'
-                    - **COUCHETARD** : 'ATD.TO'
+                    - **DOLLARAMA** : 'DOLTO', 'DLMAF'
+                    - **COUCHETARD** : 'ATDTO'
                     - **RETAIL** : <span style='color: green;'>**'WMT'**</span>, 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' <span style='color: blue;'>(TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
                     - **TECH** : <span style='color: green;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'NVDA'
                      """)
