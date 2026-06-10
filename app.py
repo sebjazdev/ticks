@@ -37,7 +37,7 @@ app_ui = ui.page_fluid(
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                     - **S&P500** : '^GSPC', '^SPX', **'SPY'**, 'IVV', 'VOO' <span style='color: blue;'>(GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
                     - **NASDAQ** : '^IXIC', '^NDX', **'QQQ'**, 'QQQM' <span style='color: blue;'>(IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
-                    - **DOWJONES** : **'^DJI'** <span style='color: blue;'>(30 major financial performance publicly traded companies in the United States)</span>
+                    - **DOWJONES** : **'^DJI'** <span style='color: blue;'>(30 usa major financial performance publicly traded companies)</span>
                     - **VANGUARD** : **'VT'**, 'VTI', 'VGT', 'VYM' <span style='color: blue;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
                     - **BLACKROCK** : 'BLK'
                     - **DOLLARAMA** : 'DOL.TO', 'DLMAF'
