@@ -32,13 +32,13 @@ app_ui = ui.page_fluid(
         ui.output_plot("stock_plot"),
         ui.markdown("""
                     - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
-                    - **GOLD** : 'GC=F', 'GLD', 'IAU', 'BHP', 'RIO' <span style='color: blue;'>(GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP world's largest mining company, RIO australian global mining titan)</span>
+                    - **GOLD** : 'GC=F', **'GLD'**, 'IAU', 'BHP', 'RIO' <span style='color: blue;'>(GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP world's largest mining company, RIO australian global mining titan)</span>
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
-                    - **S&P500** : '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO' <span style='color: blue;'>(GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
-                    - **NASDAQ** : '^IXIC', '^NDX', 'QQQ', 'QQQM' <span style='color: blue;'>(IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
-                    - **DOWJONES** : '^DJI'
-                    - **VANGUARD** : 'VT', 'VTI', 'VGT', 'VYM' <span style='color: blue;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
+                    - **S&P500** : '^GSPC', '^SPX', **'SPY'**, 'IVV', 'VOO' <span style='color: blue;'>(GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
+                    - **NASDAQ** : '^IXIC', '^NDX', **'QQQ'**, 'QQQM' <span style='color: blue;'>(IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
+                    - **DOWJONES** : **'^DJI'** <span style='color: blue;'>(30 major financial performance publicly traded companies in the United States)</span>
+                    - **VANGUARD** : **'VT'**, 'VTI', 'VGT', 'VYM' <span style='color: blue;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
                     - **BLACKROCK** : 'BLK'
                     - **DOLLARAMA** : 'DOL.TO', 'DLMAF'
                     - **COUCHETARD** : 'ATD.TO'
