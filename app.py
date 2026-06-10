@@ -22,7 +22,7 @@ AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X',
                      'LLY', 'JNJ', 'MRK', 'PFE', 'GSK', # PHARMA
                      'DOL.TO', 'DLMAF', # DOLLARAMA
                      'ATD.TO', # COUCHETARD
-                     'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD', # RETAIL
+                     'WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD', # RETAIL
                      'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'] # TECH
 
 # UI Definition
@@ -52,7 +52,7 @@ app_ui = ui.page_fluid(
                     - **PHARMA** : <span style='color: green;'>**'LLY'**</span>, 'JNJ', 'MRK', 'PFE', 'GSK' <span style='color: grey;'>(EliLilly largest pharma company worldwide, JNJ JohnsonJohnson, MRK Merck, PFE Pfizer)</span>
                     - **DOLLARAMA** : 'DOLTO', 'DLMAF'
                     - **COUCHETARD** : 'ATDTO'
-                    - **RETAIL** : <span style='color: green;'>**'WMT'**</span>, 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' <span style='color: grey;'>(TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
+                    - **RETAIL** : <span style='color: green;'>**'WMT', 'COST'**</span>, 'TGT', 'BJ', 'KR', 'DG', 'HD' <span style='color: grey;'>(TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
                     - **TECH** : <span style='color: green;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'NVDA'
                      """)
     )
