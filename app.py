@@ -42,7 +42,7 @@ app_ui = ui.page_fluid(
                     - **BLACKROCK** : 'BLK'
                     - **DOLLARAMA** : 'DOL.TO', 'DLMAF'
                     - **COUCHETARD** : 'ATD.TO'
-                    - **RETAIL** : 'WMT', 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' <span style='color: blue;'>(TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
+                    - **RETAIL** : **'WMT'**, 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' <span style='color: blue;'>(TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
                     - **TECH** : 'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'
                      """)
     )
