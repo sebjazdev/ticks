@@ -32,21 +32,17 @@ app_ui = ui.page_fluid(
         ui.output_plot("stock_plot"),
         ui.markdown("""
                     - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
-                    - **GOLD** : 'GC=F', <span style='color: green;'>**'GLD'**</span>, 'IAU', 'BHP', 'RIO' --- <span style='color: grey;'>(GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP world's largest mining company, RIO australian global mining titan)</span>
+                    - **GOLD** : 'GC=F', <span style='color: green;'>**'GLD'**</span>, 'IAU', 'BHP', 'RIO' <span style='color: grey;'>(GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP world's largest mining company, RIO australian global mining titan)</span>
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
-                    - **S&P500** : '^GSPC', '^SPX', <span style='color: green;'>**'SPY'**</span>, 'IVV', 'VOO' 
-                    --- <span style='color: grey;'>(GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
-                    - **NASDAQ** : '^IXIC', '^NDX', <span style='color: green;'>**'QQQ'**</span>, 'QQQM' 
-                    --- <span style='color: grey;'>(IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
+                    - **S&P500** : '^GSPC', '^SPX', <span style='color: green;'>**'SPY'**</span>, 'IVV', 'VOO' <span style='color: grey;'>(GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
+                    - **NASDAQ** : '^IXIC', '^NDX', <span style='color: green;'>**'QQQ'**</span>, 'QQQM' <span style='color: grey;'>(IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
                     - **DOWJONES** : '^DJI' <span style='color: grey;'>(30 usa major financial performance publicly traded companies)</span>
-                    - **VANGUARD** : <span style='color: green;'>**'VT'**</span>, 'VTI', 'VGT', 'VYM' 
-                    --- <span style='color: grey;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
+                    - **VANGUARD** : <span style='color: green;'>**'VT'**</span>, 'VTI', 'VGT', 'VYM' <span style='color: grey;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
                     - **BLACKROCK** : 'BLK'
                     - **DOLLARAMA** : 'DOLTO', 'DLMAF'
                     - **COUCHETARD** : 'ATDTO'
-                    - **RETAIL** : <span style='color: green;'>**'WMT'**</span>, 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' 
-                    --- <span style='color: grey;'>(TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
+                    - **RETAIL** : <span style='color: green;'>**'WMT'**</span>, 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' <span style='color: grey;'>(TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
                     - **TECH** : <span style='color: green;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'NVDA'
                      """)
     )
