@@ -48,7 +48,7 @@ app_ui = ui.page_fluid(
                     - **DEFENSE** : 'LMT', 'NOC', 'GD', 'CAE' <span style='color: grey;'>(LMT LockheedMartin, NOC NorthropGrumman, GD GeneralDynamics, CAE Canadian)</span>
                     - **ENERGY** : 'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ' <span style='color: grey;'>(XOM ExxonMobil, CVX Chevron, COP ConocoPhillips, SHEL Shell, BP BritishPetroleum, CNQ CanadianNaturalResources)</span>
                     - **INDUSTRIAL** : <span style='color: green;'>**'CAT'**</span>, 'GE', 'BA', 'ETN', 'UNP' <span style='color: grey;'>(CAT Caterpillar, GE Aerospace, BA Boeing, ETN Eaton, UNP UnionPacific)</span>
-                    - **BANK** :'JPM', 'BAC', 'C', <span style='color: green;'>**'GS'**</span>, 'WFC', 'RY', 'TD', 'BMO' <span style='color: grey;'>(JPM JPMorgan, BAC BankOfAmerica, C Citigroup, GS GoldmanSachs, WFC WellsFargo, RY RoyalBankOfCanada, TD TorontoDominion, BMO BankOfMontreal)</span>
+                    - **BANK** : 'JPM', 'BAC', 'C', <span style='color: green;'>**'GS'**</span>, 'WFC', 'RY', 'TD', 'BMO' <span style='color: grey;'>(JPM JPMorgan, BAC BankOfAmerica, C Citigroup, GS GoldmanSachs, WFC WellsFargo, RY RoyalBankOfCanada, TD TorontoDominion, BMO BankOfMontreal)</span>
                     - **PHARMA** : 'LLY', 'JNJ', 'MRK', 'PFE', 'GSK' <span style='color: grey;'>(EliLilly largest pharma company worldwide, JNJ JohnsonJohnson, MRK Merck, PFE Pfizer)</span>
                     - **DOLLARAMA** : 'DOLTO', 'DLMAF'
                     - **COUCHETARD** : 'ATDTO'
