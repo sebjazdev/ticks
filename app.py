@@ -7,6 +7,7 @@ from datetime import date
 
 # Define the list of available tickers
 AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
+                     'GLD', 'IAU', 'GC=F', 'BHP', 'RIO' # GOLD
                      'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
                      'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
                      '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
@@ -31,6 +32,7 @@ app_ui = ui.page_fluid(
         ui.output_plot("stock_plot"),
         ui.markdown("""
                     - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
+                    - **GOLD** : 'GLD', 'IAU', 'GC=F', 'BHP', 'RIO' <span style='color: blue;'>(GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, GC=F most widely tracked global benchmark for gold, BHP world's largest mining company, RIO australian global mining titan)</span>
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                     - **S&P500** : '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO' <span style='color: blue;'>(GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
