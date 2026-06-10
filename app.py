@@ -16,7 +16,7 @@ AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X',
                      'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
                      'BLK', # BLACKROCK
                      'LMT', 'NOC', 'GD', 'CAE', # DEFENSE
-                     'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ', 'PSX', # ENERGY
+                     'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ', # ENERGY
                      'CAT', 'GE', 'BA', 'ETN', 'UNP', # INDUSTRIAL
                      'JPM', 'BAC', 'GS', 'RY', 'TD', 'BMO', # BANK
                      'LLY', 'JNJ', 'MRK', 'PFE', 'GSK', # PHARMA
@@ -46,7 +46,7 @@ app_ui = ui.page_fluid(
                     - **VANGUARD** : <span style='color: green;'>**'VT'**</span>, 'VTI', 'VGT', 'VYM' <span style='color: grey;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
                     - **BLACKROCK** : 'BLK'
                     - **DEFENSE** : 'LMT', 'NOC', 'GD', 'CAE' <span style='color: grey;'>(LMT LockheedMartin, NOC NorthropGrumman, GD GeneralDynamics, CAE Canadian)</span>
-                    - **ENERGY** : 'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ', 'PSX' <span style='color: grey;'>(XOM ExxonMobil, CVX Chevron, COP ConocoPhillips, SHEL Shell, BP BritishPetroleum, CNQ CanadianNaturalResources)</span>
+                    - **ENERGY** : 'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ' <span style='color: grey;'>(XOM ExxonMobil, CVX Chevron, COP ConocoPhillips, SHEL Shell, BP BritishPetroleum, CNQ CanadianNaturalResources)</span>
                     - **INDUSTRIAL** : 'CAT', 'GE', 'BA', 'ETN', 'UNP' <span style='color: grey;'>(CAT Caterpillar, GE Aerospace, BA Boeing, ETN Eaton, UNP Union Pacific)</span>
                     - **BANK** : 'JPM', 'BAC', 'GS', 'RY', 'TD', 'BMO' <span style='color: grey;'>(JPM JPMorgan, BAC BankOfAmerica, GS GoldmanSachs, RY RoyalBankOfCanada, TD TorontoDominion, BMO BankOfMontreal)</span>
                     - **PHARMA** : 'LLY', 'JNJ', 'MRK', 'PFE', 'GSK' <span style='color: grey;'>(EliLilly largest pharma company worldwide, JNJ JohnsonJohnson, MRK Merck, PFE Pfizer)</span>
