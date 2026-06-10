@@ -40,7 +40,7 @@ app_ui = ui.page_fluid(
                     - **GOLD** : 'GC=F', <span style='color: green;'>**'GLD'**</span>, 'IAU', 'BHP', 'RIO' <span style='color: grey;'>(GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP largest mining company, RIO australian global)</span>
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
-                    - **S&P500** : '^GSPC', '^SPX', <span style='color: green;'>**'SPY'**</span>, 'IVV', 'VOO' <span style='color: grey;'>(GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
+                    - **S&P500** : '^GSPC', '^SPX', <span style='color: green;'>**'SPY'**</span>, 'IVV', 'VOO' <span style='color: grey;'>(GSPC & SPX [index non-tradable / cannot buy], SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
                     - **NASDAQ** : '^IXIC', '^NDX', <span style='color: green;'>**'QQQ'**</span>, 'QQQM' <span style='color: grey;'>(IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
                     - **DOWJONES** : '^DJI' <span style='color: grey;'>(30 usa major financial performance publicly traded companies)</span>
                     - **VANGUARD** : <span style='color: green;'>**'VT'**</span>, 'VTI', 'VGT', 'VYM' <span style='color: grey;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
