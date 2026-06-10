@@ -32,18 +32,18 @@ app_ui = ui.page_fluid(
         ui.output_plot("stock_plot"),
         ui.markdown("""
                     - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
-                    - **GOLD** : 'GC=F', **'GLD'**, 'IAU', 'BHP', 'RIO' <span style='color: blue;'>(GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP world's largest mining company, RIO australian global mining titan)</span>
+                    - **GOLD** : 'GC=F', <u>**'GLD'**</u>, 'IAU', 'BHP', 'RIO' <span style='color: blue;'>(GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP world's largest mining company, RIO australian global mining titan)</span>
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
-                    - **S&P500** : '^GSPC', '^SPX', **'SPY'**, 'IVV', 'VOO' <span style='color: blue;'>(GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
-                    - **NASDAQ** : '^IXIC', '^NDX', **'QQQ'**, 'QQQM' <span style='color: blue;'>(IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
-                    - **DOWJONES** : **'^DJI'** <span style='color: blue;'>(30 usa major financial performance publicly traded companies)</span>
-                    - **VANGUARD** : **'VT'**, 'VTI', 'VGT', 'VYM' <span style='color: blue;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
+                    - **S&P500** : '^GSPC', '^SPX', <u>**'SPY'**</u>, 'IVV', 'VOO' <span style='color: blue;'>(GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
+                    - **NASDAQ** : '^IXIC', '^NDX', <u>**'QQQ'**</u>, 'QQQM' <span style='color: blue;'>(IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
+                    - **DOWJONES** : '^DJI' <span style='color: blue;'>(30 usa major financial performance publicly traded companies)</span>
+                    - **VANGUARD** : <u>**'VT'**</u>, 'VTI', 'VGT', 'VYM' <span style='color: blue;'>(VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
                     - **BLACKROCK** : 'BLK'
                     - **DOLLARAMA** : 'DOL.TO', 'DLMAF'
                     - **COUCHETARD** : 'ATD.TO'
-                    - **RETAIL** : <u>**'WMT'**, 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' <span style='color: blue;'>(TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
-                    - **TECH** : <u>**'GOOGL'**, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'NVDA'
+                    - **RETAIL** : <u>**'WMT'**</u>, 'TGT', 'COST', 'BJ', 'KR', 'DG', 'HD' <span style='color: blue;'>(TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
+                    - **TECH** : <u>**'GOOGL'**</u>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'NVDA'
                      """)
     )
 )
