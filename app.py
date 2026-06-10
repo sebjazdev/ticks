@@ -33,7 +33,7 @@ app_ui = ui.page_fluid(
         ui.markdown("""
                     - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
                     - **GOLD** : 'GC=F', <span style='color: green;'>**'GLD'**</span>, 'IAU', 'BHP', 'RIO' 
-                    ---<span style='color: grey;'>(GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP world's largest mining company, RIO australian global mining titan)</span>
+                    <hr><span style='color: grey;'>(GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP world's largest mining company, RIO australian global mining titan)</span>
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                     - **S&P500** : '^GSPC', '^SPX', <span style='color: green;'>**'SPY'**</span>, 'IVV', 'VOO' 
