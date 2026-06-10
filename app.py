@@ -7,7 +7,7 @@ from datetime import date
 
 # Define the list of available tickers
 AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
-                     'GLD', 'IAU', 'GC=F', 'BHP', 'RIO' # GOLD
+                     'GLD', 'IAU', 'GC=F', 'BHP', 'RIO', # GOLD
                      'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
                      'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
                      '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
