@@ -31,7 +31,7 @@ app_ui = ui.page_fluid(
     ui.layout_sidebar(
         ui.sidebar(
             ui.input_date("start_date", ui.tags.b("Select Start Date"), value="2026-01-01"),
-            ui.input_date("end_date", ui.tags.b("Select End Date"), value=date.today()),
+            ui.input_date("end_date", ui.tags.b("Select End Date"), value=date.final()),
             # ui.input_checkbox("select_all", ui.tags.b("Select All/None"), value=False),
             ui.input_checkbox_group("tickers", ui.tags.b("Select Tickers"), choices={t: t for t in AVAILABLE_TICKERS}) # selected=AVAILABLE_TICKERS
         ),
@@ -131,9 +131,9 @@ def server(input, output, session):
             max_val = prices.max()
             max_date = prices.idxmax()
             
-            # TODAY Most recent available
-            today_val = prices.iloc[-1]
-            today_date = prices.index[-1]
+            # FINAL Most recent available
+            final_val = prices.iloc[-1]
+            final_date = prices.index[-1]
 
             # Plot the line
             line, = ax.plot(prices.index, prices, label=ticker, linewidth=1.0)
@@ -152,11 +152,11 @@ def server(input, output, session):
                 fontsize=8
             )
             
-            # Highlight TODAY
-            ax.scatter(today_date, today_val, color='blue', zorder=5, s=40)
+            # Highlight FINAL
+            ax.scatter(final_date, final_val, color='blue', zorder=5, s=40)
             ax.annotate(
-                f"Today {ticker} : {today_date:%Y-%m-%d}, {today_val:.2f}", 
-                (today_date, today_val), 
+                f"final {ticker} : {final_date:%Y-%m-%d}, {final_val:.2f}", 
+                (final_date, final_val), 
                 xytext=(5, -15), 
                 textcoords="offset points",
                 ha='right',
