@@ -36,7 +36,7 @@ app_ui = ui.page_fluid(
             ui.input_checkbox_group("tickers", ui.tags.b("Select Tickers"), choices={t: t for t in AVAILABLE_TICKERS}) # selected=AVAILABLE_TICKERS
         ),
         ui.output_plot("stock_plot"),
-        ui.markdown("""
+        ui.markdown("""Tickers Notes
                     - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
                     - **GOLD** : 'GC=F', <span style='color: blue;'>**'GLD'**</span>, 'IAU', 'BHP', 'RIO' <span style='color: grey;'>(GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP largest mining company, RIO australian global)</span>
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
