@@ -31,6 +31,7 @@ app_ui = ui.page_fluid(
     ui.layout_sidebar(
         ui.sidebar(
             ui.input_date("start_date", ui.tags.b("Select Start Date"), value="2026-01-01"),
+            ui.input_date("end_date", ui.tags.b("Select End Date"), value=date.today()),
             # ui.input_checkbox("select_all", ui.tags.b("Select All/None"), value=False),
             ui.input_checkbox_group("tickers", ui.tags.b("Select Tickers"), choices={t: t for t in AVAILABLE_TICKERS}) # selected=AVAILABLE_TICKERS
         ),
@@ -72,7 +73,7 @@ def server(input, output, session):
             return None
         
         start_date = input.start_date()
-        end_date = date.today()
+        end_date = input.end_date()
         
         # Fetches the closing prices for all specified tickers
         try:
