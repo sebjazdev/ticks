@@ -30,8 +30,8 @@ app_ui = ui.page_fluid(
     ui.panel_title(title="", window_title="Yahoo Finance Tickers"),
     ui.layout_sidebar(
         ui.sidebar(
-            ui.input_date("start_date", ui.tags.b("Select Start Date"), value="2026-01-01"),
-            ui.input_date("end_date", ui.tags.b("Select End Date"), value=date.today()),
+            ui.input_date("start_cal_date", ui.tags.b("Select Start Date"), value="2026-01-01"),
+            ui.input_date("end_cal_date", ui.tags.b("Select End Date"), value=date.today()),
             # ui.input_checkbox("select_all", ui.tags.b("Select All/None"), value=False),
             ui.input_checkbox_group("tickers", ui.tags.b("Select Tickers"), choices={t: t for t in AVAILABLE_TICKERS}) # selected=AVAILABLE_TICKERS
         ),
@@ -72,13 +72,13 @@ def server(input, output, session):
         if not selected_tickers:
             return None
         
-        start_date = input.start_date()
-        end_date = input.end_date()
+        start_cal_date = input.start_cal_date()
+        end_cal_date = input.end_cal_date()
         
         # Fetches the closing prices for all specified tickers
         try:
             # list() ensures it's a list for yfinance
-            df = yf.download(list(selected_tickers), start=start_date, end=end_date)
+            df = yf.download(list(selected_tickers), start=start_cal_date, end=end_cal_date)
             
             if df.empty:
                 return None
@@ -131,9 +131,9 @@ def server(input, output, session):
             max_val = prices.max()
             max_date = prices.idxmax()
             
-            # FINAL Most recent available
-            final_val = prices.iloc[-1]
-            final_date = prices.index[-1]
+            # END Most recent available
+            end_val = prices.iloc[-1]
+            end_date = prices.index[-1]
 
             # Plot the line
             line, = ax.plot(prices.index, prices, label=ticker, linewidth=1.0)
@@ -152,11 +152,11 @@ def server(input, output, session):
                 fontsize=8
             )
             
-            # Highlight FINAL
-            ax.scatter(final_date, final_val, color='black', zorder=5, s=40)
+            # Highlight END
+            ax.scatter(end_date, end_val, color='black', zorder=5, s=40)
             ax.annotate(
-                f"Final {ticker} : {final_date:%Y-%m-%d}, {final_val:.2f}", 
-                (final_date, final_val), 
+                f"End {ticker} : {end_date:%Y-%m-%d}, {end_val:.2f}", 
+                (end_date, end_val), 
                 xytext=(5, -15), 
                 textcoords="offset points",
                 ha='right',
