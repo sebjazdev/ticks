@@ -153,7 +153,7 @@ def server(input, output, session):
             )
             
             # Highlight FINAL
-            ax.scatter(final_date, final_val, color='teal', zorder=5, s=40)
+            ax.scatter(final_date, final_val, color='black', zorder=5, s=40)
             ax.annotate(
                 f"Final {ticker} : {final_date:%Y-%m-%d}, {final_val:.2f}", 
                 (final_date, final_val), 
@@ -161,7 +161,7 @@ def server(input, output, session):
                 textcoords="offset points",
                 ha='right',
                 fontweight='bold', 
-                color='teal',
+                color='black',
                 fontsize=8
             )
             
