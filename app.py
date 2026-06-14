@@ -23,7 +23,9 @@ AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X',
                      'DOL.TO', 'DLMAF', # DOLLARAMA
                      'ATD.TO', # COUCHETARD
                      'WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD', # RETAIL
-                     'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT'] # TECH
+                     'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', # TECH
+                     'MRVL'
+                    ]
 
 # UI Definition
 app_ui = ui.page_fluid(
