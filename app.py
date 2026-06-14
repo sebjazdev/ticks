@@ -33,7 +33,7 @@ app_ui = ui.page_fluid(
             ui.input_date("start_cal_date", ui.tags.b("Select Start Date"), value="2026-01-01"),
             ui.input_date("end_cal_date", ui.tags.b("Select End Date"), value=date.today()),
             # ui.input_checkbox("select_all", ui.tags.b("Select All/None"), value=False),
-            ui.input_checkbox_group("tickers", ui.tags.b("Select Tickers"), choices={t: t for t in AVAILABLE_TICKERS}) # selected=AVAILABLE_TICKERS
+            ui.input_checkbox_group("tickers", ui.tags.b("Select Tickers"), choices={t: t for t in AVAILABLE_TICKERS}, selected=AVAILABLE_TICKERS['GLD', 'SPY'])
         ),
         ui.output_plot("stock_plot"),
         ui.markdown("""
