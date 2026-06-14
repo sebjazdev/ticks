@@ -63,11 +63,11 @@ app_ui = ui.page_fluid(
 # Server Logic
 def server(input, output, session):
     @reactive.Effect
-    @reactive.event(input.select_all)
+    # @reactive.event(input.select_all)
     @reactive.event(input.select_prefered)
     def _():
-        ui.update_checkbox_group("tickers", selected=AVAILABLE_TICKERS if input.select_all() else [])
-        ui.update_checkbox_group("tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"] if input.select_prefered() else [])
+        # ui.update_checkbox_group("tickers", selected=AVAILABLE_TICKERS if input.select_all() else [])
+        ui.update_checkbox_group("tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"] if input.select_prefered())
 
     @reactive.Calc
     def data():
