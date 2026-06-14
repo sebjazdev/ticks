@@ -24,7 +24,7 @@ AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X',
                      'ATD.TO', # COUCHETARD
                      'WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD', # RETAIL
                      'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', # TECH
-                     'MRVL'
+                     'MRVL', 'DIS', 'NFLX', 'SONY' # ENTERTAINMENT
                     ]
 
 # UI Definition
@@ -58,6 +58,7 @@ app_ui = ui.page_fluid(
                     - **COUCHETARD** : 'ATDTO'
                     - **RETAIL** : <span style='color: blue;'>**'WMT', 'COST'**</span>, 'TGT', 'BJ', 'KR', 'DG', 'HD' <span style='color: teal;'>----- (TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
                     - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'NVDA'
+                    - **ENTERTAINMENT** : <span style='color: blue;'>**'MRVL'**</span>, 'DIS', 'NFLX', 'SONY'
                      """)
     )
 )
@@ -69,7 +70,7 @@ def server(input, output, session):
     @reactive.event(input.select_preferred)
     def _():
         # ui.update_checkbox_group("tickers", selected=AVAILABLE_TICKERS if input.select_all() else [])
-        ui.update_checkbox_group("tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"] if input.select_preferred() else [])
+        ui.update_checkbox_group("tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.select_preferred() else [])
 
     @reactive.Calc
     def data():
