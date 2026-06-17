@@ -133,19 +133,19 @@ def server(input, output, session):
             if prices.empty:
                 continue
             
-            # MAX Calculation
+            # MAX variables
             max_val = prices.max()
             max_date = prices.idxmax()
             
-            # END Most recent available
+            # END variables
             end_val = prices.iloc[-1]
             end_date = prices.index[-1]
 
-            # Plot the line
+            # Plot line
             line, = ax.plot(prices.index, prices, label=ticker, linewidth=1.0)
             color = line.get_color()
 
-            # Highlight MAX
+            # MAX highlight 
             ax.scatter(max_date, max_val, color='red', zorder=5, s=40)
             ax.annotate(
                 f"Max {ticker} : {max_date:%Y-%m-%d}, {max_val:.2f}", 
@@ -158,7 +158,7 @@ def server(input, output, session):
                 fontsize=8
             )
             
-            # Highlight END
+            # END highlight 
             ax.scatter(end_date, end_val, color='black', zorder=5, s=40)
             ax.annotate(
                 f"End {ticker} : {end_date:%Y-%m-%d}, {end_val:.2f}", 
