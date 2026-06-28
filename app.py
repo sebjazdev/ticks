@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from datetime import date
 
-# Define the list of available tickers
+# Define the list of all tickers
 ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
                      'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
                      'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
@@ -74,7 +74,7 @@ def server(input, output, session):
         # ui.update_checkbox_group("group_tickers", selected=ALL_TICKERS if input.select_all() else [])
         # ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.select_grow() else [])
         # ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.select_drop() else [])
-        ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.select_preferred() else [])
+        ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.select_preferred()) # else [])
 
     @reactive.Calc
     def data():
