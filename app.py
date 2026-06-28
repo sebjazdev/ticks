@@ -9,7 +9,6 @@ from datetime import date
 ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
                      'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
                      'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
-                     'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
                      '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
                      '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
                      '^DJI', # DOW JONES
@@ -24,6 +23,7 @@ ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADU
                      'ATD.TO', # COUCHETARD
                      'WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD', # RETAIL
                      'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'SPCX', '005930.KS', # TECH
+                     'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
                      'MRVL', 'DIS', 'NFLX', 'SONY' # ENTERTAINMENT
                     ]
 
@@ -67,7 +67,6 @@ app_ui = ui.page_fluid(
                     - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
                     - **GOLD** : 'GC=F', <span style='color: blue;'>**'GLD'**</span>, 'IAU', 'BHP', 'RIO' <span style='color: teal;'>----- (GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP largest mining company, RIO australian global)</span>
-                    - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                     - **S&P500** : '^GSPC', '^SPX', <span style='color: blue;'>**'SPY'**</span>, 'IVV', 'VOO' <span style='color: teal;'>----- (GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
                     - **NASDAQ** : '^IXIC', '^NDX', <span style='color: blue;'>**'QQQ'**</span>, 'QQQM' <span style='color: teal;'>----- (IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
                     - **DOWJONES** : '^DJI' <span style='color: teal;'>----- (30 usa major financial performance publicly traded companies)</span>
@@ -82,6 +81,7 @@ app_ui = ui.page_fluid(
                     - **COUCHETARD** : 'ATDTO'
                     - **RETAIL** : <span style='color: blue;'>**'WMT', 'COST'**</span>, 'TGT', 'BJ', 'KR', 'DG', 'HD' <span style='color: teal;'>----- (TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
                     - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'NVDA', 'TSM', 'SPCX', '005930.KS' (Samsung)
+                    - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                     - **ENTERTAINMENT** : <span style='color: blue;'>**'MRVL'**</span>, 'DIS', 'NFLX', 'SONY'
                      """)
     )
