@@ -42,7 +42,7 @@ app_ui = ui.page_fluid(
                 choices={
                     "option1": "Preferred",
                     "option2": "CAD",
-                    "option3": "Drop",
+                    "option3": "S&P500-NASDAQ",
                     "option4": "None"
                 },
                 selected="option1"),
