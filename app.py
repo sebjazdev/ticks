@@ -34,15 +34,14 @@ app_ui = ui.page_fluid(
         ui.sidebar(
             ui.input_date("start_cal_date", ui.tags.b("Start Date"), value="2026-01-01"),
             ui.input_date("end_cal_date", ui.tags.b("End Date"), value=date.today()),
-            # ui.input_checkbox("check_all", ui.tags.b("All/None"), value=False),
             # ui.input_checkbox("check_preferred", ui.tags.b("Preferred"), value=True),
             ui.input_radio_buttons(
                 "radio_options", 
                 ui.tags.b("Options"), 
                 choices={
                     "option1": "Preferred",
-                    "option2": "CAD",
-                    "option3": "S&P500-NASDAQ",
+                    "option2": "Grow 50%",
+                    "option3": "Drop 50%",
                     "option4": "None"
                 },
                 selected="option1"),
@@ -75,21 +74,88 @@ app_ui = ui.page_fluid(
 
 # Server Logic
 def server(input, output, session):
-    @reactive.Effect
-    # @reactive.event(input.check_preferred)
-    # def _():
-        # ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.check_preferred() else [])
-    @reactive.event(input.radio_options)
-    def _():
-        if input.radio_options() == "option1": # Preferred
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"])
-        elif input.radio_options() == "option2": # CAD
-            ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
-        elif input.radio_options() == "option3":
-            ui.update_checkbox_group("group_tickers", selected=['SPY', 'QQQ'])
-        else:
-            ui.update_checkbox_group("group_tickers", selected=[])
+    #CKECK PREFERRED  
+    #@reactive.Effect
+    #@reactive.event(input.check_preferred)
+    #def _():
+        #ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.check_preferred() else [])
+    
+    #RADIO PREFERRED-ETF-CAD-NONE
+    #@reactive.Effect  
+    #@reactive.event(input.radio_options)
+    #def _():
+        #if input.radio_options() == "option1": # Preferred
+            #ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"])
+        #elif input.radio_options() == "option2": # ETF
+            #ui.update_checkbox_group("group_tickers", selected=["SPY", "QQQ"])
+        #elif input.radio_options() == "option3": # CAD
+            #ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
+        #else:
+            #ui.update_checkbox_group("group_tickers", selected=[])
 
+    # 1. New Reactive Calculation to scan ALL_TICKERS for grow/drop
+    @reactive.Calc
+    def ticker_performance():
+        start_date = input.start_cal_date()
+        end_date = input.end_cal_date()
+        
+        grow_list = []
+        drop_list = []
+        
+        try:
+            # Download Close prices for ALL_TICKERS to evaluate performance
+            df = yf.download(ALL_TICKERS, start=start_date, end=end_date, progress=False)
+            if df.empty or 'Close' not in df.columns:
+                return {"grow": [], "drop": []}
+                
+            close_df = df['Close']
+            
+            for ticker in ALL_TICKERS:
+                # Skip private tickers (like .PVT) or tickers missing from downloaded columns
+                if ticker not in close_df.columns:
+                    continue
+                    
+                series = close_df[ticker].dropna()
+                if len(series) < 2:
+                    continue
+                
+                initial_price = series.iloc[0]
+                final_price = series.iloc[-1]
+                
+                if initial_price == 0:
+                    continue
+                    
+                # Calculate overall performance percentage
+                pct_change = (final_price - initial_price) / initial_price
+                
+                if pct_change >= 0.50: # Increased by 50% or more
+                    grow_list.append(ticker)
+                elif pct_change <= -0.50: # Decreased by 50% or more
+                    drop_list.append(ticker)
+                    
+        except Exception as e:
+            print(f"Error calculating performance: {e}")
+            
+        return {"grow": grow_list, "drop": drop_list}
+
+    # 2. Updated reactive event observer
+    @reactive.Effect
+    @reactive.event(input.radio_options, input.start_cal_date, input.end_cal_date)
+    def _():
+        option = input.radio_options()
+        
+        if option == "option1": # Preferred
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"])
+        elif option in ["option2", "option3"]: # Grow / Drop
+            # Fetch lists computed by ticker_performance calculation
+            perf = ticker_performance()
+            if option == "option2":
+                ui.update_checkbox_group("group_tickers", selected=perf["grow"])
+            else:
+                ui.update_checkbox_group("group_tickers", selected=perf["drop"])
+        else: # None
+            ui.update_checkbox_group("group_tickers", selected=[])
+    
     @reactive.Calc
     def data():
         selected_tickers = input.group_tickers()
