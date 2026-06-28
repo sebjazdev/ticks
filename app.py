@@ -36,7 +36,7 @@ app_ui = ui.page_fluid(
             ui.input_date("end_cal_date", ui.tags.b("End Date"), value=date.today()),
             ui.input_select(
                 "pct_threshold",
-                ui.tags.b("Change%"),
+                ui.tags.b("Delta"),
                 choices={
                     "0.10": "10%",
                     "0.20": "20%",
@@ -50,8 +50,8 @@ app_ui = ui.page_fluid(
                 ui.tags.b("Options"), 
                 choices={
                     "option1": "Preferred",
-                    "option2": "Grow Change%",
-                    "option3": "Drop Change%",
+                    "option2": "Grow Delta",
+                    "option3": "Drop Delta",
                     "option4": "None"
                 },
                 selected="option1"),
@@ -141,11 +141,11 @@ def server(input, output, session):
                     continue
                     
                 # Calculate overall performance percentage
-                pct_change = (final_price - initial_price) / initial_price
+                pct_delta = (final_price - initial_price) / initial_price
                 
-                if pct_change >= threshold: # Increased by threshold % or more
+                if pct_delta >= threshold: # Increased by threshold or more
                     grow_list.append(ticker)
-                elif pct_change <= -threshold: # Decreased by threshold % or more
+                elif pct_delta <= -threshold: # Decreased by threshold or more
                     drop_list.append(ticker)
                     
         except Exception as e:
