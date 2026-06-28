@@ -55,6 +55,10 @@ app_ui = ui.page_fluid(
                     "option4": "None"
                 },
                 selected="option1"),
+            ui.tags.hr(),
+            ui.tags.b("Counts:"),
+            ui.output_text_verbatim("output_counts"),
+            ui.tags.hr(),
             # ui.input_checkbox("check_preferred", ui.tags.b("Preferred"), value=True),
             ui.input_checkbox_group("group_tickers", ui.tags.b("Tickers"), choices={t: t for t in ALL_TICKERS}) #, selected=["GLD", "SPY"])
         ),
@@ -104,7 +108,7 @@ def server(input, output, session):
         #else: # None
             #ui.update_checkbox_group("group_tickers", selected=[])
 
-    # 1. New Reactive Calculation to scan ALL_TICKERS for grow/drop
+    # 1. Reactive Calculation to scan ALL_TICKERS for grow/drop
     @reactive.Calc
     def ticker_performance():
         start_date = input.start_cal_date()
@@ -148,8 +152,14 @@ def server(input, output, session):
             print(f"Error calculating performance: {e}")
             
         return {"grow": grow_list, "drop": drop_list}
-
-    # 2. Updated reactive event observer
+    
+    # Server logic to output counts dynamically
+    @render.text
+    def output_counts():
+        perf = ticker_performance()
+        return f"Grow count: {len(perf['grow'])}\nDrop count: {len(perf['drop'])}"
+      
+    # 2. Reactive event observer
     @reactive.Effect
     @reactive.event(input.radio_options, input.start_cal_date, input.end_cal_date, input.pct_threshold)
     def _():
@@ -167,7 +177,7 @@ def server(input, output, session):
         else: # None
             ui.update_checkbox_group("group_tickers", selected=[])
           
-    # 3. data calculation stays the same
+    # 3. data calculation
     @reactive.Calc
     def data():
         selected_tickers = input.group_tickers()
@@ -202,7 +212,7 @@ def server(input, output, session):
             print(f"Error downloading data: {e}")
             return None
 
-    # 4. stock_plot function stays the same
+    # 4. stock_plot function
     @render.plot
     def stock_plot():
         df = data()
