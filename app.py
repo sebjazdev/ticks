@@ -7,8 +7,8 @@ from datetime import date
 
 # Define the list of all tickers
 ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
-                     'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
                      'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
+                     'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
                      'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
                      '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
                      '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
@@ -34,7 +34,6 @@ app_ui = ui.page_fluid(
         ui.sidebar(
             ui.input_date("start_cal_date", ui.tags.b("Start Date"), value="2026-01-01"),
             ui.input_date("end_cal_date", ui.tags.b("End Date"), value=date.today()),
-            # ui.input_checkbox("check_preferred", ui.tags.b("Preferred"), value=True),
             ui.input_select(
                 "pct_threshold",
                 ui.tags.b("Change%"),
@@ -56,13 +55,14 @@ app_ui = ui.page_fluid(
                     "option4": "None"
                 },
                 selected="option1"),
+            # ui.input_checkbox("check_preferred", ui.tags.b("Preferred"), value=True),
             ui.input_checkbox_group("group_tickers", ui.tags.b("Tickers"), choices={t: t for t in ALL_TICKERS}) #, selected=["GLD", "SPY"])
         ),
         ui.output_plot("stock_plot"),
         ui.markdown("""
                     - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
-                    - **GOLD** : 'GC=F', <span style='color: blue;'>**'GLD'**</span>, 'IAU', 'BHP', 'RIO' <span style='color: teal;'>----- (GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP largest mining company, RIO australian global)</span>
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
+                    - **GOLD** : 'GC=F', <span style='color: blue;'>**'GLD'**</span>, 'IAU', 'BHP', 'RIO' <span style='color: teal;'>----- (GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP largest mining company, RIO australian global)</span>
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                     - **S&P500** : '^GSPC', '^SPX', <span style='color: blue;'>**'SPY'**</span>, 'IVV', 'VOO' <span style='color: teal;'>----- (GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
                     - **NASDAQ** : '^IXIC', '^NDX', <span style='color: blue;'>**'QQQ'**</span>, 'QQQM' <span style='color: teal;'>----- (IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
@@ -101,7 +101,7 @@ def server(input, output, session):
             #ui.update_checkbox_group("group_tickers", selected=["SPY", "QQQ"])
         #elif input.radio_options() == "option3": # CAD
             #ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
-        #else:
+        #else: # None
             #ui.update_checkbox_group("group_tickers", selected=[])
 
     # 1. New Reactive Calculation to scan ALL_TICKERS for grow/drop
