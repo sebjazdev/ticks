@@ -6,7 +6,7 @@ import pandas as pd
 from datetime import date
 
 # Define the list of available tickers
-AVAILABLE_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
+ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
                      'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
                      'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
                      'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
@@ -35,8 +35,10 @@ app_ui = ui.page_fluid(
             ui.input_date("start_cal_date", ui.tags.b("Select Start Date"), value="2026-01-01"),
             ui.input_date("end_cal_date", ui.tags.b("Select End Date"), value=date.today()),
             # ui.input_checkbox("select_all", ui.tags.b("Select All/None"), value=False),
+            # ui.input_checkbox("select_grow", ui.tags.b("Select Grow"), value=False),
+            # ui.input_checkbox("select_drop", ui.tags.b("Select Drop"), value=False),
             ui.input_checkbox("select_preferred", ui.tags.b("Select Preferred"), value=True),
-            ui.input_checkbox_group("tickers", ui.tags.b("Select Tickers"), choices={t: t for t in AVAILABLE_TICKERS}) #, selected=["GLD", "SPY"])
+            ui.input_checkbox_group("group_tickers", ui.tags.b("Select Tickers"), choices={t: t for t in ALL_TICKERS}) #, selected=["GLD", "SPY"])
         ),
         ui.output_plot("stock_plot"),
         ui.markdown("""
@@ -69,12 +71,14 @@ def server(input, output, session):
     # @reactive.event(input.select_all)
     @reactive.event(input.select_preferred)
     def _():
-        # ui.update_checkbox_group("tickers", selected=AVAILABLE_TICKERS if input.select_all() else [])
-        ui.update_checkbox_group("tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.select_preferred() else [])
+        # ui.update_checkbox_group("group_tickers", selected=ALL_TICKERS if input.select_all() else [])
+        # ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.select_grow() else [])
+        # ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.select_drop() else [])
+        ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.select_preferred() else [])
 
     @reactive.Calc
     def data():
-        selected_tickers = input.tickers()
+        selected_tickers = input.group_tickers()
         if not selected_tickers:
             return None
         
@@ -109,7 +113,7 @@ def server(input, output, session):
     @render.plot
     def stock_plot():
         df = data()
-        selected_tickers = list(input.tickers())
+        selected_tickers = list(input.group_tickers())
         
         if df is None or len(selected_tickers) == 0:
             fig, ax = plt.subplots()
