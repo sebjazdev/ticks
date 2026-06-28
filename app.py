@@ -32,8 +32,8 @@ app_ui = ui.page_fluid(
     ui.panel_title(title="", window_title="Yahoo Finance Tickers"),
     ui.layout_sidebar(
         ui.sidebar(
-            ui.input_date("start_cal_date", ui.tags.b("Start Date"), value="2026-01-01"),
-            ui.input_date("end_cal_date", ui.tags.b("End Date"), value=date.today()),
+            ui.input_date("start_cal_date", ui.tags.b("Start"), value="2026-01-01"),
+            ui.input_date("end_cal_date", ui.tags.b("End"), value=date.today()),
             ui.input_select(
                 "pct_threshold",
                 ui.tags.b("Delta"),
@@ -157,7 +157,7 @@ def server(input, output, session):
     @render.text
     def output_counts():
         perf = ticker_performance()
-        return f"Grow count: {len(perf['grow'])}\nDrop count: {len(perf['drop'])}"
+        return f"Grow Count: {len(perf['grow'])}\nDrop Count: {len(perf['drop'])}"
       
     # 2. Reactive event observer
     @reactive.Effect
