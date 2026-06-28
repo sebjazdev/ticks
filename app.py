@@ -55,7 +55,7 @@ app_ui = ui.page_fluid(
                     "0.40": "40%",
                     "0.50": "50%"
                 },
-                selected="0.10",
+                selected="0.10"),
             ui.input_checkbox_group("group_tickers", ui.tags.b("Tickers"), choices={t: t for t in ALL_TICKERS}) #, selected=["GLD", "SPY"])
         ),
         ui.output_plot("stock_plot"),
