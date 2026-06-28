@@ -41,7 +41,7 @@ app_ui = ui.page_fluid(
                 ui.tags.b("Options"), 
                 choices={
                     "option1": "Preferred",
-                    "option2": "Grow",
+                    "option2": "CAD",
                     "option3": "Drop",
                     "option4": "None"
                 },
@@ -81,12 +81,12 @@ def server(input, output, session):
         # ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.check_preferred() else [])
     @reactive.event(input.radio_options)
     def _():
-        if input.radio_options() == "option1": 
+        if input.radio_options() == "option1": # Preferred
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"])
-        elif input.radio_options() == "option2":
-            ui.update_checkbox_group("group_tickers", selected=["SPY"])
+        elif input.radio_options() == "option2": # CAD
+            ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
         elif input.radio_options() == "option3":
-            ui.update_checkbox_group("group_tickers", selected=["QQQ"])
+            ui.update_checkbox_group("group_tickers", selected=['SPY', 'QQQ'])
         else:
             ui.update_checkbox_group("group_tickers", selected=[])
 
