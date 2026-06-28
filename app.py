@@ -81,7 +81,7 @@ def server(input, output, session):
         # ui.update_checkbox_group("group_tickers", selected=ALL_TICKERS if input.check_all() else [])
         # ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.check_preferred() else [])
         if input.radio_options() == "option1":
-          ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"]
+          ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"])
         elif input.radio_options() == "option2":
           ui.update_checkbox_group("group_tickers", selected=["SPY"])
         elif input.radio_options() == "option3":
