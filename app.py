@@ -41,8 +41,9 @@ app_ui = ui.page_fluid(
                 ui.tags.b("Options"), 
                 choices={
                     "option1": "Preferred",
-                    "option2": "SPY",
-                    "option3": "QQQ"
+                    "option2": "Grow",
+                    "option3": "Drop",
+                    "option4": "None"
                 },
                 selected="option1"),
             ui.input_checkbox_group("group_tickers", ui.tags.b("Tickers"), choices={t: t for t in ALL_TICKERS}) #, selected=["GLD", "SPY"])
