@@ -32,20 +32,20 @@ app_ui = ui.page_fluid(
     ui.panel_title(title="", window_title="Yahoo Finance Tickers"),
     ui.layout_sidebar(
         ui.sidebar(
-            ui.input_date("start_cal_date", ui.tags.b("Select Start Date"), value="2026-01-01"),
-            ui.input_date("end_cal_date", ui.tags.b("Select End Date"), value=date.today()),
-            # ui.input_checkbox("check_all", ui.tags.b("Check All/None"), value=False),
-            # ui.input_checkbox("check_preferred", ui.tags.b("Check Preferred"), value=True),
+            ui.input_date("start_cal_date", ui.tags.b("Start Date"), value="2026-01-01"),
+            ui.input_date("end_cal_date", ui.tags.b("End Date"), value=date.today()),
+            # ui.input_checkbox("check_all", ui.tags.b("All/None"), value=False),
+            # ui.input_checkbox("check_preferred", ui.tags.b("Preferred"), value=True),
             ui.input_radio_buttons(
                 "radio_options", 
-                ui.tags.b("Radio Options"), 
+                ui.tags.b("Options"), 
                 choices={
                     "option1": "Preferred",
                     "option2": "SPY",
                     "option3": "QQQ"
                 },
                 selected="option1"),
-            ui.input_checkbox_group("group_tickers", ui.tags.b("Select Tickers"), choices={t: t for t in ALL_TICKERS}) #, selected=["GLD", "SPY"])
+            ui.input_checkbox_group("group_tickers", ui.tags.b("Tickers"), choices={t: t for t in ALL_TICKERS}) #, selected=["GLD", "SPY"])
         ),
         ui.output_plot("stock_plot"),
         ui.markdown("""
@@ -75,19 +75,19 @@ app_ui = ui.page_fluid(
 # Server Logic
 def server(input, output, session):
     @reactive.Effect
-    # @reactive.event(input.check_all)
-    @reactive.event(input.check_preferred)
-    def _():
-        # ui.update_checkbox_group("group_tickers", selected=ALL_TICKERS if input.check_all() else [])
+    # @reactive.event(input.check_preferred)
+    # def _():
         # ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.check_preferred() else [])
-        if input.radio_options() == "option1":
-          ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"])
+    @reactive.event(input.radio_options)
+    def _():
+        if input.radio_options() == "option1": 
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"])
         elif input.radio_options() == "option2":
-          ui.update_checkbox_group("group_tickers", selected=["SPY"])
+            ui.update_checkbox_group("group_tickers", selected=["SPY"])
         elif input.radio_options() == "option3":
-          ui.update_checkbox_group("group_tickers", selected=["QQQ"])
+            ui.update_checkbox_group("group_tickers", selected=["QQQ"])
         else:
-          ui.update_checkbox_group("group_tickers", selected=[])
+            ui.update_checkbox_group("group_tickers", selected=[])
 
     @reactive.Calc
     def data():
