@@ -35,19 +35,9 @@ app_ui = ui.page_fluid(
             ui.input_date("start_cal_date", ui.tags.b("Start Date"), value="2026-01-01"),
             ui.input_date("end_cal_date", ui.tags.b("End Date"), value=date.today()),
             # ui.input_checkbox("check_preferred", ui.tags.b("Preferred"), value=True),
-            ui.input_radio_buttons(
-                "radio_options", 
-                ui.tags.b("Options"), 
-                choices={
-                    "option1": "Preferred",
-                    "option2": "Grow VAR%",
-                    "option3": "Drop VAR%",
-                    "option4": "None"
-                },
-                selected="option1"),
             ui.input_select(
                 "pct_threshold",
-                ui.tags.b("Select Change %"),
+                ui.tags.b("Change%"),
                 choices={
                     "0.10": "10%",
                     "0.20": "20%",
@@ -56,6 +46,16 @@ app_ui = ui.page_fluid(
                     "0.50": "50%"
                 },
                 selected="0.10"),
+            ui.input_radio_buttons(
+                "radio_options", 
+                ui.tags.b("Options"), 
+                choices={
+                    "option1": "Preferred",
+                    "option2": "Grow Change%",
+                    "option3": "Drop Change%",
+                    "option4": "None"
+                },
+                selected="option1"),
             ui.input_checkbox_group("group_tickers", ui.tags.b("Tickers"), choices={t: t for t in ALL_TICKERS}) #, selected=["GLD", "SPY"])
         ),
         ui.output_plot("stock_plot"),
