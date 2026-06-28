@@ -40,11 +40,22 @@ app_ui = ui.page_fluid(
                 ui.tags.b("Options"), 
                 choices={
                     "option1": "Preferred",
-                    "option2": "Grow 50%",
-                    "option3": "Drop 50%",
+                    "option2": "Grow VAR%",
+                    "option3": "Drop VAR%",
                     "option4": "None"
                 },
                 selected="option1"),
+            ui.input_select(
+                "pct_threshold",
+                ui.tags.b("Select Change %"),
+                choices={
+                    "0.10": "10%",
+                    "0.20": "20%",
+                    "0.30": "30%",
+                    "0.40": "40%",
+                    "0.50": "50%"
+                },
+                selected="0.10"
             ui.input_checkbox_group("group_tickers", ui.tags.b("Tickers"), choices={t: t for t in ALL_TICKERS}) #, selected=["GLD", "SPY"])
         ),
         ui.output_plot("stock_plot"),
@@ -74,13 +85,13 @@ app_ui = ui.page_fluid(
 
 # Server Logic
 def server(input, output, session):
-    #CKECK PREFERRED  
+    #OLD CKECK PREFERRED  
     #@reactive.Effect
     #@reactive.event(input.check_preferred)
     #def _():
         #ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.check_preferred() else [])
     
-    #RADIO PREFERRED-ETF-CAD-NONE
+    #OLD RADIO PREFERRED-ETF-CAD-NONE
     #@reactive.Effect  
     #@reactive.event(input.radio_options)
     #def _():
@@ -98,7 +109,7 @@ def server(input, output, session):
     def ticker_performance():
         start_date = input.start_cal_date()
         end_date = input.end_cal_date()
-        
+        threshold = float(input.pct_threshold())
         grow_list = []
         drop_list = []
         
@@ -128,9 +139,9 @@ def server(input, output, session):
                 # Calculate overall performance percentage
                 pct_change = (final_price - initial_price) / initial_price
                 
-                if pct_change >= 0.50: # Increased by 50% or more
+                if pct_change >= threshold: # Increased by threshold % or more
                     grow_list.append(ticker)
-                elif pct_change <= -0.50: # Decreased by 50% or more
+                elif pct_change <= -threshold: # Decreased by threshold % or more
                     drop_list.append(ticker)
                     
         except Exception as e:
@@ -140,7 +151,7 @@ def server(input, output, session):
 
     # 2. Updated reactive event observer
     @reactive.Effect
-    @reactive.event(input.radio_options, input.start_cal_date, input.end_cal_date)
+    @reactive.event(input.radio_options, input.start_cal_date, input.end_cal_date, input.pct_threshold)
     def _():
         option = input.radio_options()
         
@@ -155,7 +166,8 @@ def server(input, output, session):
                 ui.update_checkbox_group("group_tickers", selected=perf["drop"])
         else: # None
             ui.update_checkbox_group("group_tickers", selected=[])
-    
+          
+    # 3. data calculation stays the same
     @reactive.Calc
     def data():
         selected_tickers = input.group_tickers()
@@ -190,6 +202,7 @@ def server(input, output, session):
             print(f"Error downloading data: {e}")
             return None
 
+    # 4. stock_plot function stays the same
     @render.plot
     def stock_plot():
         df = data()
