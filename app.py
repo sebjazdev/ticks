@@ -56,7 +56,7 @@ app_ui = ui.page_fluid(
                 },
                 selected="option1"),
             #ui.tags.hr(),
-            ui.tags.b("Counts:"),
+            ui.tags.b("Counts"),
             ui.output_text_verbatim("output_counts"),
             #ui.tags.hr(),
             # ui.input_checkbox("check_preferred", ui.tags.b("Preferred"), value=True),
