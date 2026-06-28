@@ -55,10 +55,10 @@ app_ui = ui.page_fluid(
                     "option4": "None"
                 },
                 selected="option1"),
-            ui.tags.hr(),
+            #ui.tags.hr(),
             ui.tags.b("Counts:"),
             ui.output_text_verbatim("output_counts"),
-            ui.tags.hr(),
+            #ui.tags.hr(),
             # ui.input_checkbox("check_preferred", ui.tags.b("Preferred"), value=True),
             ui.input_checkbox_group("group_tickers", ui.tags.b("Tickers"), choices={t: t for t in ALL_TICKERS}) #, selected=["GLD", "SPY"])
         ),
