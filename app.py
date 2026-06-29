@@ -50,13 +50,13 @@ app_ui = ui.page_fluid(
                 ui.tags.b("Select"), 
                 choices={
                     "option1": "Preferred",
-                    "option2": "Grow Delta",
-                    "option3": "Drop Delta",
+                    "option2": "Grow by Delta",
+                    "option3": "Drop by Delta",
                     "option4": "None"
                 },
                 selected="option1"),
             #ui.tags.hr(),
-            #ui.tags.b("Counts"),
+            ui.tags.b("Counts"),
             ui.output_text_verbatim("output_counts"),
             #ui.tags.hr(),
             # ui.input_checkbox("check_preferred", ui.tags.b("Preferred"), value=True),
@@ -157,7 +157,7 @@ def server(input, output, session):
     @render.text
     def output_counts():
         perf = ticker_performance()
-        return f"Grow Count: {len(perf['grow'])}\nDrop Count: {len(perf['drop'])}"
+        return f"Grow by Delta: {len(perf['grow'])}\nDrop by Delta: {len(perf['drop'])}"
       
     # 2. Reactive event observer
     @reactive.Effect
