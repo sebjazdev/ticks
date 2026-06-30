@@ -49,7 +49,7 @@ app_ui = ui.page_fluid(
                 "radio_options", 
                 ui.tags.b("Select"), 
                 choices={
-                    "option1": "Preferred",
+                    "option1": "Preferred (blue)",
                     "option2": "Grow by Delta",
                     "option3": "Drop by Delta",
                     "option4": "None"
