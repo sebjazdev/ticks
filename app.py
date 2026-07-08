@@ -22,9 +22,9 @@ ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADU
                      'DOL.TO', 'DLMAF', # DOLLARAMA
                      'ATD.TO', # COUCHETARD
                      'WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD', # RETAIL
-                     'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'SPCX', '005930.KS', # TECH
+                     'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'SPCX', '005930.KS', 'MRVL', # TECH
                      'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
-                     'MRVL', 'DIS', 'NFLX', 'SONY' # ENTERTAINMENT
+                     'DIS', 'NFLX', 'SONY' # ENTERTAINMENT
                     ]
 
 # UI Definition
@@ -80,9 +80,9 @@ app_ui = ui.page_fluid(
                     - **DOLLARAMA** : 'DOLTO', 'DLMAF'
                     - **COUCHETARD** : 'ATDTO'
                     - **RETAIL** : <span style='color: blue;'>**'WMT', 'COST'**</span>, 'TGT', 'BJ', 'KR', 'DG', 'HD' <span style='color: teal;'>----- (TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
-                    - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'NVDA', 'TSM', 'SPCX', '005930.KS' (Samsung)
+                    - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'NVDA', 'TSM', 'SPCX', '005930.KS' (Samsung), 'MRVL' (Marvel)
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
-                    - **ENTERTAINMENT** : <span style='color: blue;'>**'MRVL'**</span>, 'DIS', 'NFLX', 'SONY'
+                    - **ENTERTAINMENT** : 'DIS', 'NFLX', 'SONY'
                      """)
     )
 )
@@ -93,7 +93,7 @@ def server(input, output, session):
     #@reactive.Effect
     #@reactive.event(input.check_preferred)
     #def _():
-        #ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"] if input.check_preferred() else [])
+        #ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"] if input.check_preferred() else [])
     
     #OLD RADIO PREFERRED-ETF-CAD-NONE
     #@reactive.Effect  
