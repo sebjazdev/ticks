@@ -161,7 +161,7 @@ def server(input, output, session):
     @render.text
     def output_counts():
         perf = ticker_performance()
-        return f"Grow by Delta: {len(perf['grow'])} tickers\nDrop by Delta: {len(perf['drop'])} tickers"
+        return f"Delta Grow : {len(perf['grow'])} tickers\nDelta Drop : {len(perf['drop'])} tickers"
       
     # 2. Reactive event observer
     @reactive.Effect
