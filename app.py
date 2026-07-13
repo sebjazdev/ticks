@@ -224,7 +224,7 @@ def server(input, output, session):
         
         if df is None or len(selected_tickers) == 0:
             fig, ax = plt.subplots()
-            ax.text(0.5, 0.5, "No ticker or no data available", ha='center', va='center')
+            ax.text(0.5, 0.5, "No ticker / No data", ha='center', va='center')
             return fig
 
         # Ensure df is a DataFrame for consistent iteration
