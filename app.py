@@ -42,7 +42,9 @@ app_ui = ui.page_fluid(
                     "0.20": "20%",
                     "0.30": "30%",
                     "0.40": "40%",
-                    "0.50": "50%"
+                    "0.50": "50%",
+                    "1.00": "100%",
+                    "2.00": "200%"
                 },
                 selected="0.10"),
             ui.input_radio_buttons(
@@ -100,7 +102,7 @@ def server(input, output, session):
     #@reactive.event(input.radio_options)
     #def _():
         #if input.radio_options() == "option1": # Preferred
-            #ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"])
+            #ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
         #elif input.radio_options() == "option2": # ETF
             #ui.update_checkbox_group("group_tickers", selected=["SPY", "QQQ"])
         #elif input.radio_options() == "option3": # CAD
@@ -166,7 +168,7 @@ def server(input, output, session):
         option = input.radio_options()
         
         if option == "option1": # Preferred
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MRVL"])
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
         elif option in ["option2", "option3"]: # Grow / Drop
             # Fetch lists computed by ticker_performance calculation
             perf = ticker_performance()
