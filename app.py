@@ -54,8 +54,8 @@ app_ui = ui.page_fluid(
                 ui.tags.b("Select"), 
                 choices={
                     "option1": "Preferred (blue)",
-                    "option2": "Grow by Delta",
-                    "option3": "Drop by Delta",
+                    "option2": "Delta Grow",
+                    "option3": "Delta Drop",
                     "option4": "None"
                 },
                 selected="option1"),
