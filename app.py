@@ -54,7 +54,7 @@ app_ui = ui.page_fluid(
                 ui.tags.b("Preset"), 
                 choices={
                     "option1": "Preferred (blue)",
-                    "option2": "Preset 2",
+                    "option2": "Fiat CAD",
                     "option3": "Preset 3",
                     "option4": "Preset 4",
                     "option5": "Preset 5",
@@ -176,8 +176,8 @@ def server(input, output, session):
         
         if option == "option1": # Preferred
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
-        elif option == "option2": # TBD
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
+        elif option == "option2": # Fiad CAD
+            ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
         elif option == "option3": # TBD
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
         elif option == "optio4": # TBD
