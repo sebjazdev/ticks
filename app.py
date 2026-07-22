@@ -55,7 +55,7 @@ app_ui = ui.page_fluid(
                 choices={
                     "option1": "Preferred (blue)",
                     "option2": "Fiat CAD",
-                    "option3": "Preset 3",
+                    "option3": "Tech",
                     "option4": "Preset 4",
                     "option5": "Preset 5",
                     "option6": "Preset 6",
@@ -89,7 +89,7 @@ app_ui = ui.page_fluid(
                     - **DOLLARAMA** : 'DOLTO', 'DLMAF'
                     - **COUCHETARD** : 'ATDTO'
                     - **RETAIL** : <span style='color: blue;'>**'WMT', 'COST'**</span>, 'TGT', 'BJ', 'KR', 'DG', 'HD' <span style='color: teal;'>----- (TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
-                    - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'NVDA', 'TSM', 'SPCX', '005930.KS' (Samsung), 'MRVL' (Marvel)
+                    - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'SPCX', 'NVDA', 'TSM', '005930.KS' (Samsung), 'MRVL' (Marvel)
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                     - **ENTERTAINMENT** : 'DIS', 'NFLX', 'SONY'
                      """)
@@ -178,8 +178,8 @@ def server(input, output, session):
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
         elif option == "option2": # Fiad CAD
             ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
-        elif option == "option3": # TBD
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
+        elif option == "option3": # Tech
+            ui.update_checkbox_group("group_tickers", selected=['TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'MRVL', 'PLTR'])
         elif option == "optio4": # TBD
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
         elif option == "option5": # TBD
