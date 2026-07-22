@@ -51,12 +51,17 @@ app_ui = ui.page_fluid(
                 selected="0.10"),
             ui.input_radio_buttons(
                 "radio_options", 
-                ui.tags.b("Select"), 
+                ui.tags.b("Preset"), 
                 choices={
                     "option1": "Preferred (blue)",
-                    "option2": "Delta Grow",
-                    "option3": "Delta Drop",
-                    "option4": "None"
+                    "option2": "Preset 2",
+                    "option3": "Preset 3",
+                    "option4": "Preset 4",
+                    "option5": "Preset 5",
+                    "option6": "Preset 6",
+                    "option7": "Delta Grow",
+                    "option8": "Delta Drop",
+                    "option9": "None"
                 },
                 selected="option1"),
             #ui.tags.hr(),
@@ -171,10 +176,20 @@ def server(input, output, session):
         
         if option == "option1": # Preferred
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
-        elif option in ["option2", "option3"]: # Grow / Drop
+        elif option == "option2": # TBD
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
+        elif option == "option3": # TBD
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
+        elif option == "optio4": # TBD
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
+        elif option == "option5": # TBD
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
+        elif option == "option6": # TBD
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
+        elif option in ["option7", "option8"]: # Grow / Drop
             # Fetch lists computed by ticker_performance calculation
             perf = ticker_performance()
-            if option == "option2":
+            if option == "option7":
                 ui.update_checkbox_group("group_tickers", selected=perf["grow"])
             else:
                 ui.update_checkbox_group("group_tickers", selected=perf["drop"])
