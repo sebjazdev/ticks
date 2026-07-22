@@ -38,15 +38,15 @@ app_ui = ui.page_fluid(
                 "pct_threshold",
                 ui.tags.b("Delta"),
                 choices={
-                    "0.10": "± 10%",
-                    "0.20": "± 20%",
-                    "0.30": "± 30%",
-                    "0.40": "± 40%",
-                    "0.50": "± 50%)",
-                    "1.00": "± 100% (x 2)",
-                    "2.00": "± 200% (x 3)",
-                    "3.00": "± 300% (x 4)",
-                    "4.00": "± 400% (x 5)"
+                    "0.10": "± 10 %",
+                    "0.20": "± 20 %",
+                    "0.30": "± 30 %",
+                    "0.40": "± 40 %",
+                    "0.50": "± 50 %)",
+                    "1.00": "± 100 % (x 2)",
+                    "2.00": "± 200 % (x 3)",
+                    "3.00": "± 300 % (x 4)",
+                    "4.00": "± 400 % (x 5)"
                 },
                 selected="0.10"),
             ui.input_radio_buttons(
@@ -59,8 +59,8 @@ app_ui = ui.page_fluid(
                     "option4": "ETF",
                     "option5": "Retail",
                     "option6": "Bank",
-                    "option7": "Delta Grow",
-                    "option8": "Delta Drop",
+                    "option7": "% Delta Grow",
+                    "option8": "% Delta Drop",
                     "option9": "None"
                 },
                 selected="option1"),
