@@ -58,7 +58,7 @@ app_ui = ui.page_fluid(
                     "option3": "Tech",
                     "option4": "ETF",
                     "option5": "Retail",
-                    "option6": "Preset 6",
+                    "option6": "Bank",
                     "option7": "Delta Grow",
                     "option8": "Delta Drop",
                     "option9": "None"
@@ -184,8 +184,8 @@ def server(input, output, session):
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "BLK"])
         elif option == "option5": # Retail
             ui.update_checkbox_group("group_tickers", selected=['WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD'])
-        elif option == "option6": # TBD
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
+        elif option == "option6": # Bank
+            ui.update_checkbox_group("group_tickers", selected=['JPM', 'BAC', 'C', 'GS', 'WFC', 'RY', 'TD', 'BMO'])
         elif option in ["option7", "option8"]: # Grow / Drop
             # Fetch lists computed by ticker_performance calculation
             perf = ticker_performance()
