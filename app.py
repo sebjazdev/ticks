@@ -56,8 +56,8 @@ app_ui = ui.page_fluid(
                     "option1": "Preferred (blue)",
                     "option2": "Fiat CAD",
                     "option3": "Tech",
-                    "option4": "Preset 4",
-                    "option5": "Preset 5",
+                    "option4": "ETF",
+                    "option5": "Retail",
                     "option6": "Preset 6",
                     "option7": "Delta Grow",
                     "option8": "Delta Drop",
@@ -180,10 +180,10 @@ def server(input, output, session):
             ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
         elif option == "option3": # Tech
             ui.update_checkbox_group("group_tickers", selected=['TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'MRVL', 'PLTR'])
-        elif option == "optio4": # TBD
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
-        elif option == "option5": # TBD
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
+        elif option == "optio4": # ETF
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "BLK"])
+        elif option == "option5": # Retail
+            ui.update_checkbox_group("group_tickers", selected=['WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD'])
         elif option == "option6": # TBD
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
         elif option in ["option7", "option8"]: # Grow / Drop
