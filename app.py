@@ -297,10 +297,10 @@ def server(input, output, session):
                 fontsize=8
             )
             
-        ax.set_title('Yahoo Finance Tickers', fontsize=10, fontweight='bold')
-        ax.set_xlabel('Date', fontsize=10, fontweight='bold')
-        ax.set_ylabel('Value', fontsize=10, fontweight='bold')
-        ax.tick_params(axis='both', labelsize=8)
+        ax.set_title('Yahoo Finance Tickers', fontsize=14, fontweight='bold')
+        ax.set_xlabel('Date', fontsize=14, fontweight='bold')
+        ax.set_ylabel('Value', fontsize=14, fontweight='bold')
+        ax.tick_params(axis='both', labelsize=10)
         ax.grid(True, linestyle='--', alpha=0.7)
         ax.legend(loc='upper left')
         plt.tight_layout()
