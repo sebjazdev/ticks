@@ -89,6 +89,7 @@ app_ui = ui.page_fluid(
                     - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'SPCX', 'NVDA', 'TSM', '005930.KS' (Samsung), 'MRVL' (Marvel), 'XWD.TO', 'URTH' (Toronto & NYSE BlackRock iShares MSCI World ETF)
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                     - **ENTERTAINMENT** : 'DIS', 'NFLX', 'SONY'
+                    - **MSCI** : 'XWD.TO', 'URTH' (Toronto & NYSE BlackRock iShares MSCI World ETF)
                      """)
     )
 )
