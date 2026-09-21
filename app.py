@@ -10,7 +10,7 @@ ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADU
                      'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
                      'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
                      '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
-                     '^IXIC', '^NDX', 'QQQ', 'QQQM', 'MSCI', # NASDAQ
+                     '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
                      '^DJI', # DOW JONES
                      'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
                      'BLK', 'BX', # BLACK
@@ -24,7 +24,8 @@ ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADU
                      'WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD', # RETAIL
                      'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'SPCX', '005930.KS', 'MRVL', # TECH
                      'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
-                     'DIS', 'NFLX', 'SONY' # ENTERTAINMENT
+                     'DIS', 'NFLX', 'SONY', # ENTERTAINMENT
+                     'XWD.TO', 'URTH' # MSCI
                     ]
 
 # UI Definition
@@ -35,7 +36,7 @@ app_ui = ui.page_fluid(
             ui.input_date("start_cal_date", ui.tags.b("Start"), value="2026-01-01"),
             ui.input_date("end_cal_date", ui.tags.b("End"), value=date.today()),
             ui.input_select(
-                "pct_threshold",
+                "fraction_threshold",
                 ui.tags.b("Delta"),
                 choices={
                     "0.10": "± 10 %",
@@ -43,10 +44,10 @@ app_ui = ui.page_fluid(
                     "0.30": "± 30 %",
                     "0.40": "± 40 %",
                     "0.50": "± 50 %",
-                    "1.00": "± 100 % (x 2)",
-                    "2.00": "± 200 % (x 3)",
-                    "3.00": "± 300 % (x 4)",
-                    "4.00": "± 400 % (x 5)"
+                    "1.00": "x/ 2",
+                    "2.00": "x/ 3",
+                    "3.00": "x/ 4",
+                    "4.00": "x/ 5)"
                 },
                 selected="0.10"),
             ui.input_radio_buttons(
@@ -89,7 +90,7 @@ app_ui = ui.page_fluid(
                     - **DOLLARAMA** : 'DOLTO', 'DLMAF'
                     - **COUCHETARD** : 'ATDTO'
                     - **RETAIL** : <span style='color: blue;'>**'WMT', 'COST'**</span>, 'TGT', 'BJ', 'KR', 'DG', 'HD' <span style='color: teal;'>----- (TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
-                    - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'SPCX', 'NVDA', 'TSM', '005930.KS' (Samsung), 'MRVL' (Marvel), 'MSCI' (Morgan Stanley Capital International, tracks global stock market indexes)
+                    - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'SPCX', 'NVDA', 'TSM', '005930.KS' (Samsung), 'MRVL' (Marvel), 'XWD.TO', 'URTH' (Toronto & NYSE BlackRock iShares MSCI World ETF)
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                     - **ENTERTAINMENT** : 'DIS', 'NFLX', 'SONY'
                      """)
@@ -122,7 +123,7 @@ def server(input, output, session):
     def ticker_performance():
         start_date = input.start_cal_date()
         end_date = input.end_cal_date()
-        threshold = float(input.pct_threshold())
+        threshold = float(input.fraction_threshold())
         grow_list = []
         drop_list = []
         
@@ -150,11 +151,11 @@ def server(input, output, session):
                     continue
                     
                 # Calculate overall performance percentage
-                pct_delta = (final_price - initial_price) / initial_price
+                fraction_delta = (final_price - initial_price) / initial_price
                 
-                if pct_delta >= threshold: # Increased by threshold or more
+                if fraction_delta >= threshold: # Increased by threshold or more
                     grow_list.append(ticker)
-                elif pct_delta <= -threshold: # Decreased by threshold or more
+                elif fraction_delta <= -threshold: # Decreased by threshold or more
                     drop_list.append(ticker)
                     
         except Exception as e:
@@ -170,14 +171,14 @@ def server(input, output, session):
       
     # 2. Reactive event observer
     @reactive.Effect
-    @reactive.event(input.radio_options, input.start_cal_date, input.end_cal_date, input.pct_threshold)
+    @reactive.event(input.radio_options, input.start_cal_date, input.end_cal_date, input.fraction_threshold)
     def _():
         option = input.radio_options()
         
         if option == "option0": # 0.None
             ui.update_checkbox_group("group_tickers", selected=[])
         elif option == "option1": # 1.Preferred
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MSCI"])
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "XWD.TO", "URTH"])
         elif option in ["option2", "option3"]: # 2.Grow 3.Drop
             # Fetch lists computed by ticker_performance calculation
             perf = ticker_performance()
