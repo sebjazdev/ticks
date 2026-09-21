@@ -10,7 +10,7 @@ ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADU
                      'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
                      'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
                      '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
-                     '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
+                     '^IXIC', '^NDX', 'QQQ', 'QQQM', 'MSCI', # NASDAQ
                      '^DJI', # DOW JONES
                      'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
                      'BLK', 'BX', # BLACK
@@ -89,7 +89,7 @@ app_ui = ui.page_fluid(
                     - **DOLLARAMA** : 'DOLTO', 'DLMAF'
                     - **COUCHETARD** : 'ATDTO'
                     - **RETAIL** : <span style='color: blue;'>**'WMT', 'COST'**</span>, 'TGT', 'BJ', 'KR', 'DG', 'HD' <span style='color: teal;'>----- (TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
-                    - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'SPCX', 'NVDA', 'TSM', '005930.KS' (Samsung), 'MRVL' (Marvel)
+                    - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'SPCX', 'NVDA', 'TSM', '005930.KS' (Samsung), 'MRVL' (Marvel), 'MSCI' (Morgan Stanley Capital International, tracks global stock market indexes)
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                     - **ENTERTAINMENT** : 'DIS', 'NFLX', 'SONY'
                      """)
@@ -177,7 +177,7 @@ def server(input, output, session):
         if option == "option0": # 0.None
             ui.update_checkbox_group("group_tickers", selected=[])
         elif option == "option1": # 1.Preferred
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "MSCI"])
         elif option in ["option2", "option3"]: # 2.Grow 3.Drop
             # Fetch lists computed by ticker_performance calculation
             perf = ticker_performance()
