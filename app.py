@@ -178,7 +178,7 @@ def server(input, output, session):
         elif option == "option4": # 4.Fiat CAD
             ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
         elif option == "option5": # 5.ETF
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "BLK", "BX"])
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "BLK", "BX", 'XWD.TO', 'URTH'])
         elif option == "option6": # 6.Tech
             ui.update_checkbox_group("group_tickers", selected=['TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'MRVL', 'PLTR'])
         elif option == "option7": # 7.Retail
