@@ -29,8 +29,10 @@ app_ui = ui.page_fluid(
     ui.panel_title(title="", window_title="Yahoo Finance Tickers"),
     ui.layout_sidebar(
         ui.sidebar(
+            # Start-End
             ui.input_date("start_cal_date", ui.tags.b("Start"), value="2026-01-01"),
             ui.input_date("end_cal_date", ui.tags.b("End"), value=date.today()),
+            # Delta
             ui.input_select(
                 "factor_threshold",
                 ui.tags.b("Delta"),
@@ -42,6 +44,10 @@ app_ui = ui.page_fluid(
                     "0.50": "0.50 (± 50 %)"
                 },
                 selected="0.10"),
+            # Count
+            ui.tags.b("Count"),
+            ui.output_text_verbatim("output_counts"),
+            # Preset
             ui.input_radio_buttons(
                 "radio_options", 
                 ui.tags.b("Preset"), 
@@ -57,12 +63,8 @@ app_ui = ui.page_fluid(
                     "option8": "8.Bank"
                 },
                 selected="option1"),
-            #ui.tags.hr(),
-            ui.tags.b("Count"),
-            ui.output_text_verbatim("output_counts"),
-            #ui.tags.hr(),
-            # ui.input_checkbox("check_preferred", ui.tags.b("Preferred"), value=True),
-            ui.input_checkbox_group("group_tickers", ui.tags.b("Tickers"), choices={t: t for t in ALL_TICKERS}) #, selected=["GLD", "SPY"])
+            # Tickers
+            ui.input_checkbox_group("group_tickers", ui.tags.b("Tickers"), choices={t: t for t in ALL_TICKERS})
         ),
         ui.output_plot("stock_plot"),
         ui.markdown("""
