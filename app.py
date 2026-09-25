@@ -13,7 +13,7 @@ ALL_TICKERS = ['======= FIAT', 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', '
                      '======= NASDAQ', '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
                      '======= DOWJONES', '^DJI', # DOW JONES
                      '======= VANGUARD', 'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
-                     '======= BLACK', 'BLK', 'BX', 'XWD.TO', 'URTH', # BLACKROCK & MSCI
+                     '======= BLACK+MSCI', 'BLK', 'BX', 'XWD.TO', 'URTH', # BLACKROCK & MSCI
                      '======= DEFENSE', 'LMT', 'NOC', 'GD', 'CAE', # DEFENSE
                      '======= ENERGY', 'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ', # ENERGY
                      '======= INDUSTRIAL', 'CAT', 'GE', 'BA', 'ETN', 'UNP', # INDUSTRIAL
