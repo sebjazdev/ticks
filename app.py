@@ -6,7 +6,7 @@ import pandas as pd
 from datetime import date
 
 # Define the list of all tickers
-ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
+ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', '---', # FIAT
                      'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
                      'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
                      '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
