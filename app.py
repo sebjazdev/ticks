@@ -35,7 +35,7 @@ app_ui = ui.page_fluid(
             # Delta
             ui.input_select(
                 "factor_threshold",
-                ui.tags.b("Delta Grow/Drop"),
+                ui.tags.b("Delta"),
                 choices={
                     "0.10": "0.10 (± 10 %)",
                     "0.20": "0.20 (± 20 %)",
