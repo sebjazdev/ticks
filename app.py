@@ -6,26 +6,22 @@ import pandas as pd
 from datetime import date
 
 # Define the list of all tickers
-ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', '---', # FIAT
-                     'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
-                     'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
-                     '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
-                     '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
-                     '^DJI', # DOW JONES
-                     'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
-                     'BLK', 'BX', # BLACK
-                     'LMT', 'NOC', 'GD', 'CAE', # DEFENSE
-                     'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ', # ENERGY
-                     'CAT', 'GE', 'BA', 'ETN', 'UNP', # INDUSTRIAL
-                     'JPM', 'BAC', 'C', 'GS', 'WFC', 'RY', 'TD', 'BMO', # BANK
-                     'LLY', 'JNJ', 'MRK', 'PFE', 'GSK', # PHARMA
-                     'DOL.TO', 'DLMAF', # DOLLARAMA
-                     'ATD.TO', # COUCHETARD
-                     'WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD', # RETAIL
-                     'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'SPCX', '005930.KS', 'MRVL', # TECH
-                     'PLTR', 'OPAI.PVT', 'ANTH.PVT', # AI
-                     'DIS', 'NFLX', 'SONY', # ENTERTAINMENT
-                     'XWD.TO', 'URTH' # MSCI
+ALL_TICKERS = ['--- FIAT', 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
+                     '--- CRYPTO', 'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
+                     '--- GOLD', 'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
+                     '--- S&P500', '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
+                     '--- NASDAQ', '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
+                     '--- DOWJONES', '^DJI', # DOW JONES
+                     '--- VANGUARD', 'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
+                     '--- BLACK', 'BLK', 'BX', 'XWD.TO', 'URTH', # BLACKROCK & MSCI
+                     '--- DEFENSE', 'LMT', 'NOC', 'GD', 'CAE', # DEFENSE
+                     '--- ENERGY', 'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ', # ENERGY
+                     '--- INDUSTRIAL', 'CAT', 'GE', 'BA', 'ETN', 'UNP', # INDUSTRIAL
+                     '--- BANK', 'JPM', 'BAC', 'C', 'GS', 'WFC', 'RY', 'TD', 'BMO', # BANK
+                     '--- PHARMA', 'LLY', 'JNJ', 'MRK', 'PFE', 'GSK', # PHARMA
+                     '--- RETAIL', 'DOL.TO', 'DLMAF', 'ATD.TO', 'WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD', # RETAIL
+                     '--- TECH', 'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'SPCX', '005930.KS', 'MRVL', # TECH
+                     '--- AI', 'PLTR', 'OPAI.PVT', 'ANTH.PVT' # AI
                     ]
 
 # UI Definition
@@ -77,19 +73,15 @@ app_ui = ui.page_fluid(
                     - **NASDAQ** : '^IXIC', '^NDX', <span style='color: blue;'>**'QQQ'**</span>, 'QQQM' <span style='color: teal;'>----- (IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
                     - **DOWJONES** : '^DJI' <span style='color: teal;'>----- (30 US major financial performance publicly traded companies)</span>
                     - **VANGUARD** : <span style='color: blue;'>**'VT'**</span>, 'VTI', 'VGT', 'VYM' <span style='color: teal;'>----- (VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
-                    - **BLACK** : 'BLK', 'BX' <span style='color: teal;'>----- (BLK BlackRock, BX BlackStone)</span>
+                    - **BLACK** : 'BLK', 'BX', 'XWD.TO', 'URTH' <span style='color: teal;'>----- (BX BlackStone, BLK BlackRock, XWD.TO Toronto & URTH NYSE BlackRock iShares MSCI World ETF)</span>
                     - **DEFENSE** : 'LMT', 'NOC', 'GD', 'CAE' <span style='color: teal;'>----- (LMT LockheedMartin, NOC NorthropGrumman, GD GeneralDynamics, CAE Canadian)</span>
                     - **ENERGY** : 'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ' <span style='color: teal;'>----- (XOM ExxonMobil, CVX Chevron, COP ConocoPhillips, SHEL Shell, BP BritishPetroleum, CNQ CanadianNaturalResources)</span>
                     - **INDUSTRIAL** : <span style='color: blue;'>**'CAT'**</span>, 'GE', 'BA', 'ETN', 'UNP' <span style='color: teal;'>----- (CAT Caterpillar, GE Aerospace, BA Boeing, ETN Eaton, UNP UnionPacific)</span>
                     - **BANK** : 'JPM', 'BAC', 'C', <span style='color: blue;'>**'GS'**</span>, 'WFC', 'RY', 'TD', 'BMO' <span style='color: teal;'>----- (JPM JPMorgan, BAC BankOfAmerica, C Citigroup, GS GoldmanSachs, WFC WellsFargo, RY RoyalBankOfCanada, TD TorontoDominion, BMO BankOfMontreal)</span>
                     - **PHARMA** : <span style='color: blue;'>**'LLY'**</span>, 'JNJ', 'MRK', 'PFE', 'GSK' <span style='color: teal;'>----- (EliLilly largest pharma company worldwide, JNJ JohnsonJohnson, MRK Merck, PFE Pfizer)</span>
-                    - **DOLLARAMA** : 'DOLTO', 'DLMAF'
-                    - **COUCHETARD** : 'ATDTO'
-                    - **RETAIL** : <span style='color: blue;'>**'WMT', 'COST'**</span>, 'TGT', 'BJ', 'KR', 'DG', 'HD' <span style='color: teal;'>----- (TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
+                    - **RETAIL** : 'DOLTO', 'DLMAF', 'ATDTO', <span style='color: blue;'>**'WMT', 'COST'**</span>, 'TGT', 'BJ', 'KR', 'DG', 'HD' <span style='color: teal;'>----- (TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
                     - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'SPCX', 'NVDA', 'TSM', '005930.KS' (Samsung), 'MRVL' (Marvel), 'XWD.TO', 'URTH' (Toronto & NYSE BlackRock iShares MSCI World ETF)
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
-                    - **ENTERTAINMENT** : 'DIS', 'NFLX', 'SONY'
-                    - **MSCI** : 'XWD.TO', 'URTH' (Toronto & NYSE BlackRock iShares MSCI World ETF)
                      """)
     )
 )
