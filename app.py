@@ -36,7 +36,7 @@ app_ui = ui.page_fluid(
             ui.input_date("start_cal_date", ui.tags.b("Start"), value="2026-01-01"),
             ui.input_date("end_cal_date", ui.tags.b("End"), value=date.today()),
             ui.input_select(
-                "fraction_threshold",
+                "factor_threshold",
                 ui.tags.b("Delta"),
                 choices={
                     "0.10": "0.10 (± 10 %)",
@@ -120,7 +120,7 @@ def server(input, output, session):
     def ticker_performance():
         start_date = input.start_cal_date()
         end_date = input.end_cal_date()
-        threshold = float(input.fraction_threshold())
+        threshold = float(input.factor_threshold())
         grow_list = []
         drop_list = []
         
@@ -148,11 +148,11 @@ def server(input, output, session):
                     continue
                     
                 # Calculate overall performance percentage
-                fraction_delta = (final_price - initial_price) / initial_price
+                factor_delta = (final_price - initial_price) / initial_price
                 
-                if fraction_delta >= threshold: # Increased by threshold or more
+                if factor_delta >= threshold: # Increased by threshold or more
                     grow_list.append(ticker)
-                elif fraction_delta <= -threshold: # Decreased by threshold or more
+                elif factor_delta <= -threshold: # Decreased by threshold or more
                     drop_list.append(ticker)
                     
         except Exception as e:
@@ -168,7 +168,7 @@ def server(input, output, session):
       
     # 2. Reactive event observer
     @reactive.Effect
-    @reactive.event(input.radio_options, input.start_cal_date, input.end_cal_date, input.fraction_threshold)
+    @reactive.event(input.radio_options, input.start_cal_date, input.end_cal_date, input.factor_threshold)
     def _():
         option = input.radio_options()
         
