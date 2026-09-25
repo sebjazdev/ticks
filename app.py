@@ -13,7 +13,7 @@ ALL_TICKERS = ['======= FIAT', 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', '
                      '======= NASDAQ', '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
                      '======= DOWJONES', '^DJI', # DOW JONES
                      '======= VANGUARD', 'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
-                     '======= BLACK+MSCI', 'BLK', 'BX', 'XWD.TO', 'URTH', # BLACKROCK & MSCI
+                     '======= BLACK+MSCI', 'BX', 'BLK', 'XWD.TO', 'URTH', # BLACKROCK & MSCI
                      '======= DEFENSE', 'LMT', 'NOC', 'GD', 'CAE', # DEFENSE
                      '======= ENERGY', 'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ', # ENERGY
                      '======= INDUSTRIAL', 'CAT', 'GE', 'BA', 'ETN', 'UNP', # INDUSTRIAL
@@ -75,7 +75,7 @@ app_ui = ui.page_fluid(
                     - **NASDAQ** : '^IXIC', '^NDX', <span style='color: blue;'>**'QQQ'**</span>, 'QQQM' <span style='color: teal;'>----- (IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
                     - **DOWJONES** : '^DJI' <span style='color: teal;'>----- (30 US major financial performance publicly traded companies)</span>
                     - **VANGUARD** : <span style='color: blue;'>**'VT'**</span>, 'VTI', 'VGT', 'VYM' <span style='color: teal;'>----- (VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
-                    - **BLACK** : 'BLK', 'BX', 'XWD.TO', 'URTH' <span style='color: teal;'>----- (BX BlackStone, BLK BlackRock, XWD.TO Toronto & URTH NYSE BlackRock iShares MSCI World ETF)</span>
+                    - **BLACK+MSCI** : 'BX', 'BLK', 'XWD.TO', 'URTH' <span style='color: teal;'>----- (BX BlackStone, BLK BlackRock, XWD.TO Toronto & URTH NYSE BlackRock iShares MSCI World ETF)</span>
                     - **DEFENSE** : 'LMT', 'NOC', 'GD', 'CAE' <span style='color: teal;'>----- (LMT LockheedMartin, NOC NorthropGrumman, GD GeneralDynamics, CAE Canadian)</span>
                     - **ENERGY** : 'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ' <span style='color: teal;'>----- (XOM ExxonMobil, CVX Chevron, COP ConocoPhillips, SHEL Shell, BP BritishPetroleum, CNQ CanadianNaturalResources)</span>
                     - **INDUSTRIAL** : <span style='color: blue;'>**'CAT'**</span>, 'GE', 'BA', 'ETN', 'UNP' <span style='color: teal;'>----- (CAT Caterpillar, GE Aerospace, BA Boeing, ETN Eaton, UNP UnionPacific)</span>
