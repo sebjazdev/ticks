@@ -6,22 +6,22 @@ import pandas as pd
 from datetime import date
 
 # Define the list of all tickers
-ALL_TICKERS = ['---@ FIAT', 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
-                     '---@ CRYPTO', 'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
-                     '---@ GOLD', 'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
-                     '---@ S&P500', '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
-                     '---@ NASDAQ', '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
-                     '---@ DOWJONES', '^DJI', # DOW JONES
-                     '---@ VANGUARD', 'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
-                     '---@ BLACK', 'BLK', 'BX', 'XWD.TO', 'URTH', # BLACKROCK & MSCI
-                     '---@ DEFENSE', 'LMT', 'NOC', 'GD', 'CAE', # DEFENSE
-                     '---@ ENERGY', 'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ', # ENERGY
-                     '---@ INDUSTRIAL', 'CAT', 'GE', 'BA', 'ETN', 'UNP', # INDUSTRIAL
-                     '---@ BANK', 'JPM', 'BAC', 'C', 'GS', 'WFC', 'RY', 'TD', 'BMO', # BANK
-                     '---@ PHARMA', 'LLY', 'JNJ', 'MRK', 'PFE', 'GSK', # PHARMA
-                     '---@ RETAIL', 'DOL.TO', 'DLMAF', 'ATD.TO', 'WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD', # RETAIL
-                     '---@ TECH', 'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'SPCX', '005930.KS', 'MRVL', # TECH
-                     '---@ AI', 'PLTR', 'OPAI.PVT', 'ANTH.PVT' # AI
+ALL_TICKERS = ['@@@ FIAT', 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X', # FIAT
+                     '@@@ CRYPTO', 'BTC-USD', 'ETH-USD', 'XRP-USD', # CRYPTO
+                     '@@@ GOLD', 'GC=F', 'GLD', 'IAU', 'BHP', 'RIO', # GOLD
+                     '@@@ S&P500', '^GSPC', '^SPX', 'SPY', 'IVV', 'VOO', # S&P 500
+                     '@@@ NASDAQ', '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
+                     '@@@ DOWJONES', '^DJI', # DOW JONES
+                     '@@@ VANGUARD', 'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
+                     '@@@ BLACK', 'BLK', 'BX', 'XWD.TO', 'URTH', # BLACKROCK & MSCI
+                     '@@@ DEFENSE', 'LMT', 'NOC', 'GD', 'CAE', # DEFENSE
+                     '@@@ ENERGY', 'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ', # ENERGY
+                     '@@@ INDUSTRIAL', 'CAT', 'GE', 'BA', 'ETN', 'UNP', # INDUSTRIAL
+                     '@@@ BANK', 'JPM', 'BAC', 'C', 'GS', 'WFC', 'RY', 'TD', 'BMO', # BANK
+                     '@@@ PHARMA', 'LLY', 'JNJ', 'MRK', 'PFE', 'GSK', # PHARMA
+                     '@@@ RETAIL', 'DOL.TO', 'DLMAF', 'ATD.TO', 'WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD', # RETAIL
+                     '@@@ TECH', 'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'SPCX', '005930.KS', 'MRVL', # TECH
+                     '@@@ AI', 'PLTR', 'OPAI.PVT', 'ANTH.PVT' # AI
                     ]
 
 # UI Definition
