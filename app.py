@@ -169,7 +169,7 @@ def server(input, output, session):
         if option == "option0": # 0.None
             ui.update_checkbox_group("group_tickers", selected=[])
         elif option == "option1": # 1.Preferred
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL", "XWD.TO", "URTH"])
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
         elif option in ["option2", "option3"]: # 2.Grow 3.Drop
             # Fetch lists computed by ticker_performance calculation
             perf = ticker_performance()
