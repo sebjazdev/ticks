@@ -20,7 +20,7 @@ ALL_TICKERS = ['======= FIAT', 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', '
                      '======= BANK', 'JPM', 'BAC', 'C', 'GS', 'WFC', 'RY', 'TD', 'BMO', # BANK
                      '======= PHARMA', 'LLY', 'JNJ', 'MRK', 'PFE', 'GSK', # PHARMA
                      '======= RETAIL', 'DOL.TO', 'DLMAF', 'ATD.TO', 'WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD', # RETAIL
-                     '======= TECH', 'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'SPCX', '005930.KS', 'MRVL', # TECH
+                     '======= TECH', 'TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'SPCX', '005930.KS', 'MRVL', 'ASML', # TECH
                      '======= AI', 'PLTR', 'OPAI.PVT', 'ANTH.PVT' # AI
                     ]
 
@@ -82,7 +82,7 @@ app_ui = ui.page_fluid(
                     - **BANK** : 'JPM', 'BAC', 'C', <span style='color: blue;'>**'GS'**</span>, 'WFC', 'RY', 'TD', 'BMO' <span style='color: teal;'>----- (JPM JPMorgan, BAC BankOfAmerica, C Citigroup, GS GoldmanSachs, WFC WellsFargo, RY RoyalBankOfCanada, TD TorontoDominion, BMO BankOfMontreal)</span>
                     - **PHARMA** : <span style='color: blue;'>**'LLY'**</span>, 'JNJ', 'MRK', 'PFE', 'GSK' <span style='color: teal;'>----- (EliLilly largest pharma company worldwide, JNJ JohnsonJohnson, MRK Merck, PFE Pfizer)</span>
                     - **RETAIL** : 'DOLTO', 'DLMAF', 'ATDTO', <span style='color: blue;'>**'WMT', 'COST'**</span>, 'TGT', 'BJ', 'KR', 'DG', 'HD' <span style='color: teal;'>----- (TGT competing Walmart, BJ competing Costco, KR competing WMT & COST, DG DollarGeneral, HD HomeDepot)</span>
-                    - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'SPCX', 'NVDA', 'TSM' (TSMC), '005930.KS' (Samsung), 'MRVL' (Marvell Technology)
+                    - **TECH** : <span style='color: blue;'>**'GOOGL'**</span>, 'AAPL', 'META', 'AMZN', 'MSFT', 'TSLA', 'SPCX', 'NVDA', 'TSM' (TSMC), '005930.KS' (Samsung), 'MRVL' (Marvell Technology), 'ASML'
                     - **AI** : 'PLTR', 'OPAI.PVT', 'ANTH.PVT'
                      """)
     )
@@ -182,7 +182,7 @@ def server(input, output, session):
         elif option == "option5": # 5.ETF
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "BLK", "BX", 'XWD.TO', 'URTH'])
         elif option == "option6": # 6.Tech
-            ui.update_checkbox_group("group_tickers", selected=['TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'MRVL', 'PLTR'])
+            ui.update_checkbox_group("group_tickers", selected=['TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'MRVL', 'PLTR', 'ASML'])
         elif option == "option7": # 7.Retail
             ui.update_checkbox_group("group_tickers", selected=['WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD'])
         elif option == "option8": # 8.Bank
